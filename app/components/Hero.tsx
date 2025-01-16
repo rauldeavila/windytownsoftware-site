@@ -56,11 +56,12 @@ export default function Hero() {
           A blazing fast task and project manager for macOS
         </p>
         <div className="flex justify-center mb-8">
-          <div className="retro-border retro-gradient p-4">
+          {/* <div className="retro-border retro-gradient p-4"> */}
+          <div>
             <Image
-              src="/placeholder.svg"
-              alt="WOLFBIT macOS App"
-              width={800}
+              src="/projects-ss-1.png"
+              alt="task wizard - macOS App"
+              width={1000}
               height={600}
               className="rounded-lg"
             />
