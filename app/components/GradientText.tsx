@@ -41,7 +41,7 @@ const GradientText = ({ children, className = "" }) => {
         className="absolute inset-0 z-20 select-none"
         style={{
           opacity: isHovered ? 1 : 0,
-          backgroundImage: `radial-gradient(circle 130px at ${mousePosition.x}px ${mousePosition.y}px, #ff6b6b, #9f7aea, transparent 70%)`,
+          backgroundImage: `radial-gradient(circle 130px at ${mousePosition.x}px ${mousePosition.y}px, #8E7DFF, #5767B0, transparent 70%)`,
           WebkitBackgroundClip: "text",
           backgroundClip: "text",
           WebkitTextFillColor: "transparent",
