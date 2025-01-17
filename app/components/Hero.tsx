@@ -1,69 +1,70 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
-  useEffect(() => {
-    // Criar estrelas
-    const starsContainer = document.querySelector(".stars-container");
-    if (starsContainer) {
-      for (let i = 0; i < 50; i++) {
-        const star = document.createElement("div");
-        star.className = "star";
-        star.style.width = Math.random() * 3 + "px";
-        star.style.height = star.style.width;
-        star.style.left = Math.random() * 100 + "%";
-        star.style.top = Math.random() * 100 + "%";
-        star.style.animationDelay = Math.random() * 1 + "s";
-        starsContainer.appendChild(star);
-      }
-    }
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
 
-    // Efeito parallax
-    const handleParallax = (e: MouseEvent) => {
-      const stars = document.querySelectorAll(".star");
-      const mouseX = e.clientX / window.innerWidth;
-      const mouseY = e.clientY / window.innerHeight;
+  const handleMouseMove = (e) => {
+    if (!isHovered) return;
 
-      stars.forEach((star) => {
-        const speed = parseFloat((star as HTMLElement).style.width) * 0.5;
-        const x = mouseX * speed;
-        const y = mouseY * speed;
-        (star as HTMLElement).style.transform = `translate(${x}px, ${y}px)`;
-      });
-    };
+    const image = e.currentTarget;
+    const rect = image.getBoundingClientRect();
 
-    window.addEventListener("mousemove", handleParallax);
+    // Calculate mouse position relative to image center
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
 
-    return () => {
-      window.removeEventListener("mousemove", handleParallax);
-    };
-  }, []);
+    // Calculate rotation based on mouse position
+    // Reduced rotation amount to 10 degrees for subtler effect
+    const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 10;
+    const rotateX = -((e.clientY - centerY) / (rect.height / 2)) * 10;
+
+    setRotation({ x: rotateX, y: rotateY });
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setRotation({ x: 0, y: 0 });
+  };
 
   return (
     <section className="py-12 md:py-24">
       <div className="container mx-auto text-center">
         <h1 className="text-6xl md:text-9xl font-bold mb-6 retro-text">
-          {/* Task{" "} */}
           <span className="relative inline-block">
-            {/* <span className="stars-container"></span> */}
-            {/* <span className="magic-text">Task Wizard</span> */}
             <span>Task Wizard</span>
           </span>
         </h1>
         <p className="text-2xl mb-12 mt-[-20px] retro-text">
           A blazing fast task and project manager for macOS
         </p>
-        {/* <p className="text-2xl mb-8 mt-[-35px] retro-text">SIMPLE</p> */}
         <div className="flex justify-center mb-8">
-          <div className="floating-window">
+          <div
+            style={{
+              transform: `perspective(1000px) rotateX(${
+                rotation.x
+              }deg) rotateY(${rotation.y}deg) scale(${isHovered ? 1.02 : 1})`,
+              transition: "all 0.15s ease",
+              willChange: "transform",
+            }}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <Image
               src="/projects-ss-1.png"
               alt="task wizard - macOS App"
               width={1000}
               height={600}
               className="rounded-lg shadow-2xl"
+              style={{ pointerEvents: "none" }}
             />
           </div>
         </div>
