@@ -6,8 +6,8 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "furfromperfect",
-  description: "Indie software company creating retro-inspired games and apps",
+  title: "windytown software",
+  description: "Indie software company creating retro-inspired apps and games",
 };
 
 export default function RootLayout({

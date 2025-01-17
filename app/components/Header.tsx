@@ -17,9 +17,12 @@ export default function Header() {
       <div className="container mx-auto flex justify-between items-center">
         <Link
           href="/"
-          className="flex items-center gap-2 text-4xl font-bold retro-text text-[#f5f5f5]"
+          className="flex items-center text-4xl font-bold retro-text text-[#f5f5f5]"
         >
-          furfromperfect
+          <span className="tracking-[-0.01em]">windytown</span>
+          <span className="text-[#B3B3B3] tracking-[-0.01em] ml-0.5">
+            software
+          </span>
         </Link>
         {/* Menu Desktop */}
         <nav className="hidden md:block">
