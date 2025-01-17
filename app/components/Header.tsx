@@ -1,4 +1,5 @@
 import Link from "next/link";
+import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   return (
@@ -10,12 +11,13 @@ export default function Header() {
         >
           furfromperfect
         </Link>
-        <nav>
+        {/* Menu Desktop */}
+        <nav className="hidden md:block">
           <ul className="flex space-x-6">
             <li>
               <Link
                 href="/blog"
-                className="text-xl hover:text-[#ff6b6b] transition-colors retro-text text-[#f5f5f5]"
+                className="text-xl hover:text-[#97A8FC] transition-colors retro-text text-[#f5f5f5]"
               >
                 Blog
               </Link>
@@ -23,13 +25,15 @@ export default function Header() {
             <li>
               <a
                 href="#contact"
-                className="text-xl hover:text-[#ff6b6b] transition-colors retro-text text-[#f5f5f5]"
+                className="text-xl hover:text-[#97A8FC] transition-colors retro-text text-[#f5f5f5]"
               >
                 Contact
               </a>
             </li>
           </ul>
         </nav>
+        {/* Menu Mobile */}
+        <MobileMenu />
       </div>
     </header>
   );

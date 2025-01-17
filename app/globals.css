@@ -42,7 +42,7 @@ body::before {
 }
 
 .retro-button {
-  background-color: #ff6b6b;
+  background-color: #8e7dff;
   border: 3px solid #333;
   box-shadow: 4px 4px 0 #333;
   transition: all 0.2s ease;
@@ -55,12 +55,12 @@ body::before {
 
 .retro-input {
   border: 3px solid #333;
-  background-color: #f5e5c0;
+  background-color: #d2d9fb;
   color: #333;
 }
 
 .retro-card {
-  background-color: #feca57;
+  background-color: #97a8fc;
   border: 3px solid #333;
   box-shadow: 6px 6px 0 #333;
 }
@@ -140,4 +140,37 @@ body::before {
     opacity: 0.4;
     transform: translate(-50%, -50%) scale(2);
   }
+}
+
+.floating-window {
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.hamburger span {
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.open span:first-child {
+  transform: rotate(45deg) translate(2px, 2px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:last-child {
+  transform: rotate(-45deg) translate(2px, -2px);
 }

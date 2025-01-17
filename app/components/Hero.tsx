@@ -44,7 +44,7 @@ export default function Hero() {
   return (
     <section className="py-12 md:py-24">
       <div className="container mx-auto text-center">
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 retro-text">
+        <h1 className="text-6xl md:text-9xl font-bold mb-6 retro-text">
           {/* Task{" "} */}
           <span className="relative inline-block">
             {/* <span className="stars-container"></span> */}
@@ -52,23 +52,26 @@ export default function Hero() {
             <span>Task Wizard</span>
           </span>
         </h1>
-        <p className="text-2xl mb-8 mt-[-20px] retro-text">
+        <p className="text-2xl mb-12 mt-[-20px] retro-text">
           A blazing fast task and project manager for macOS
         </p>
+        {/* <p className="text-2xl mb-8 mt-[-35px] retro-text">SIMPLE</p> */}
         <div className="flex justify-center mb-8">
-          {/* <div className="retro-border retro-gradient p-4"> */}
-          <div>
+          <div className="floating-window">
             <Image
               src="/projects-ss-1.png"
               alt="task wizard - macOS App"
               width={1000}
               height={600}
-              className="rounded-lg"
+              className="rounded-lg shadow-2xl"
             />
           </div>
         </div>
         <div className="flex justify-center">
-          <a href="#" className="px-6 py-3 text-xl retro-button retro-text">
+          <a
+            href="#"
+            className="px-6 py-3 mt-[60px] mb-[-60px] text-xl retro-button retro-text"
+          >
             Download Now
           </a>
         </div>
