@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import GradientText from "./GradientText";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -24,7 +25,7 @@ export default function ContactForm() {
   return (
     <section id="contact" className="py-12">
       <h2 className="text-5xl font-bold mb-12 text-center retro-text">
-        Contact
+        <GradientText>Contact</GradientText>
       </h2>
       <form onSubmit={handleSubmit} className="max-w-lg mx-auto retro-card p-8">
         <div className="mb-6">

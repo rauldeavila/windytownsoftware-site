@@ -1,4 +1,5 @@
 import Image from "next/image";
+import GradientText from "./GradientText";
 
 const products = [
   {
@@ -17,7 +18,7 @@ export default function ProductShowcase() {
   return (
     <section className="py-12">
       <h2 className="text-5xl font-bold mb-12 text-center retro-text">
-        Other cool stuff
+        <GradientText>Other cool stuff</GradientText>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {products.map((product) => (

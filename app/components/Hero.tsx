@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import GradientText from "./GradientText";
 
 export default function Hero() {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
@@ -13,12 +14,9 @@ export default function Hero() {
     const image = e.currentTarget;
     const rect = image.getBoundingClientRect();
 
-    // Calculate mouse position relative to image center
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
 
-    // Calculate rotation based on mouse position
-    // Reduced rotation amount to 10 degrees for subtler effect
     const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 10;
     const rotateX = -((e.clientY - centerY) / (rect.height / 2)) * 10;
 
@@ -38,13 +36,15 @@ export default function Hero() {
     <section className="py-12 md:py-24">
       <div className="container mx-auto text-center">
         <h1 className="text-6xl md:text-9xl font-bold mb-6 retro-text">
-          <span className="relative inline-block">
-            <span>Task Wizard</span>
-          </span>
+          <GradientText className="relative inline-block">
+            Task Wizard
+          </GradientText>
         </h1>
-        <p className="text-2xl mb-12 mt-[-20px] retro-text">
-          A blazing fast task and project manager for macOS
-        </p>
+        <div className="text-2xl mb-12 mt-[-20px] retro-text">
+          <GradientText>
+            A blazing fast task and project manager for macOS
+          </GradientText>
+        </div>
         <div className="flex justify-center mb-8">
           <div
             style={{
