@@ -2,12 +2,20 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsOpen(false);
+    router.push("/#contact");
+  };
 
   return (
-    <div className="md:hidden">
+    <div className="md:hidden relative z-50">
       {/* Botão Hamburguer */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -27,12 +35,14 @@ export default function MobileMenu() {
           <nav className="flex flex-col gap-4">
             <Link
               href="/blog"
+              onClick={() => setIsOpen(false)}
               className="text-xl hover:text-[#97A8FC] transition-colors retro-text text-[#f5f5f5]"
             >
               Blog
             </Link>
             <a
-              href="#contact"
+              href="/#contact"
+              onClick={handleContactClick}
               className="text-xl hover:text-[#97A8FC] transition-colors retro-text text-[#f5f5f5]"
             >
               Contact

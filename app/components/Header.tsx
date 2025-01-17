@@ -1,7 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
+  const router = useRouter();
+
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    router.push("/#contact");
+  };
+
   return (
     <header className="border-b-[1px] border-[#fafafa] bg-[#333333] p-4 shadow-[0_4px_0_0_#333333]">
       <div className="container mx-auto flex justify-between items-center">
@@ -24,7 +34,8 @@ export default function Header() {
             </li>
             <li>
               <a
-                href="#contact"
+                href="/#contact"
+                onClick={handleContactClick}
                 className="text-xl hover:text-[#97A8FC] transition-colors retro-text text-[#f5f5f5]"
               >
                 Contact
