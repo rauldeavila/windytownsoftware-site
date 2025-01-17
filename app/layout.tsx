@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "WOLFBIT",
+  title: "furfromperfect",
   description: "Indie software company creating retro-inspired games and apps",
 };
 
