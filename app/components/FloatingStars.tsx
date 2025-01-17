@@ -7,12 +7,16 @@ const FloatingStars = () => {
   const [stars, setStars] = useState([]);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [hoveredStarId, setHoveredStarId] = useState(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const containerRef = useRef(null);
 
-  // Defina a opacidade base das estrelas aqui (0.0 a 1.0)
+  // Base opacity for stars
   const baseOpacity = 0.75;
 
   useEffect(() => {
+    // Check if device is touch-enabled
+    setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
+
     const generateStars = () => {
       const newStars = [];
       const numStars = 30;
@@ -35,7 +39,7 @@ const FloatingStars = () => {
           baseRotation: Math.random() * 360,
           scale: 0.8 + Math.random() * 0.4,
           floatDuration: 3 + Math.random() * 4,
-          opacity: baseOpacity + Math.random() * 0.2, // Adiciona uma pequena variação na opacidade
+          opacity: baseOpacity + Math.random() * 0.2,
         });
       }
       return newStars;
@@ -52,16 +56,19 @@ const FloatingStars = () => {
   }, []);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePos({
-        x: e.clientX + window.scrollX,
-        y: e.clientY + window.scrollY,
-      });
-    };
+    // Only add mousemove listener if not a touch device
+    if (!isTouchDevice) {
+      const handleMouseMove = (e) => {
+        setMousePos({
+          x: e.clientX + window.scrollX,
+          y: e.clientY + window.scrollY,
+        });
+      };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+      window.addEventListener("mousemove", handleMouseMove);
+      return () => window.removeEventListener("mousemove", handleMouseMove);
+    }
+  }, [isTouchDevice]);
 
   return (
     <div
@@ -73,14 +80,19 @@ const FloatingStars = () => {
       }}
     >
       {stars.map((star) => {
-        const dx = ((mousePos.x - star.x) / window.innerWidth) * 30;
-        const dy = ((mousePos.y - star.y) / window.innerHeight) * 30;
+        // Calculate parallax effect only for non-touch devices
+        const dx = isTouchDevice
+          ? 0
+          : ((mousePos.x - star.x) / window.innerWidth) * 30;
+        const dy = isTouchDevice
+          ? 0
+          : ((mousePos.y - star.y) / window.innerHeight) * 30;
         const isHovered = hoveredStarId === star.id;
 
         return (
           <div
             key={star.id}
-            className="absolute cursor-pointer"
+            className="absolute"
             style={{
               left: `${star.x}px`,
               top: `${star.y}px`,
@@ -93,8 +105,8 @@ const FloatingStars = () => {
               transition: "all 0.3s ease-out",
               opacity: star.opacity,
             }}
-            onMouseEnter={() => setHoveredStarId(star.id)}
-            onMouseLeave={() => setHoveredStarId(null)}
+            onMouseEnter={() => !isTouchDevice && setHoveredStarId(star.id)}
+            onMouseLeave={() => !isTouchDevice && setHoveredStarId(null)}
           >
             <div
               className={`
@@ -114,7 +126,7 @@ const FloatingStars = () => {
                   ${isHovered ? "brightness-125 rotate-180" : ""}
                 `}
               />
-              {isHovered && (
+              {isHovered && !isTouchDevice && (
                 <div className="absolute inset-0 animate-ping opacity-75">
                   <Image
                     src={`/star-${star.variant}.png`}
