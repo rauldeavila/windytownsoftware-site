@@ -14,19 +14,19 @@ export default function Header() {
   };
 
   return (
-    <header className="relative">
+    <header className="relative w-full">
       <div className="border-b-[1px] border-[#fafafa] bg-[#333333] p-4 shadow-[0_4px_0_0_#333333]">
-        <div className="container mx-auto flex justify-between items-center">
+        <div className="container mx-auto px-4 flex justify-between items-center">
           <Link
             href="/"
-            className="flex items-center text-4xl font-bold retro-text text-[#f5f5f5]"
+            className="flex items-center text-2xl sm:text-3xl md:text-4xl font-bold retro-text text-[#f5f5f5]"
           >
             <GradientText>
-              <span className="tracking-[-0.01em] text-[#f5f5f5]">
+              <span className="tracking-[-0.01em] text-[#f5f5f5] whitespace-nowrap">
                 windytown
               </span>
             </GradientText>
-            <span className="text-[#B3B3B3] tracking-[-0.01em] ml-0.5">
+            <span className="text-[#B3B3B3] tracking-[-0.01em] ml-0.5 whitespace-nowrap">
               software
             </span>
           </Link>
@@ -53,7 +53,9 @@ export default function Header() {
             </ul>
           </nav>
           {/* Menu Mobile */}
-          <MobileMenu />
+          <div className="flex items-center md:hidden">
+            <MobileMenu />
+          </div>
         </div>
       </div>
     </header>

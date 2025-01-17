@@ -161,16 +161,23 @@ body::before {
 
 .hamburger span {
   transition: all 0.3s ease-in-out;
+  transform-origin: center;
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 4px 0;
+  background-color: #f5f5f5;
 }
 
 .hamburger.open span:first-child {
-  transform: rotate(45deg) translate(2px, 2px);
+  transform: translateY(6px) rotate(45deg);
 }
 
 .hamburger.open span:nth-child(2) {
   opacity: 0;
+  transform: translateX(-20px);
 }
 
 .hamburger.open span:last-child {
-  transform: rotate(-45deg) translate(2px, -2px);
+  transform: translateY(-6px) rotate(-45deg);
 }

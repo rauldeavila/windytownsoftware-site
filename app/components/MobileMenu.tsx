@@ -15,35 +15,35 @@ export default function MobileMenu() {
   };
 
   return (
-    <div className="md:hidden relative z-50">
-      {/* Botão Hamburguer */}
+    <div className="relative z-50">
+      {/* Hamburger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2"
+        className="p-2 -mr-2 w-10 h-10 flex items-center justify-center"
         aria-label="Menu"
       >
         <div className={`hamburger ${isOpen ? "open" : ""}`}>
-          <span className="h-0.5 w-6 bg-[#f5f5f5] block mb-1"></span>
-          <span className="h-0.5 w-6 bg-[#f5f5f5] block mb-1"></span>
-          <span className="h-0.5 w-6 bg-[#f5f5f5] block"></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </button>
 
-      {/* Menu Mobile */}
+      {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="absolute top-16 right-4 bg-[#333333] border-[1px] border-[#fafafa] p-4 min-w-[200px] shadow-lg">
+        <div className="absolute top-12 right-0 bg-[#333333] border-[1px] border-[#fafafa] p-4 min-w-[160px] shadow-lg rounded-lg">
           <nav className="flex flex-col gap-4">
             <Link
               href="/blog"
               onClick={() => setIsOpen(false)}
-              className="text-xl hover:text-[#97A8FC] transition-colors retro-text text-[#f5f5f5]"
+              className="text-lg hover:text-[#97A8FC] transition-colors retro-text text-[#f5f5f5] whitespace-nowrap"
             >
               Blog
             </Link>
             <a
               href="/#contact"
               onClick={handleContactClick}
-              className="text-xl hover:text-[#97A8FC] transition-colors retro-text text-[#f5f5f5]"
+              className="text-lg hover:text-[#97A8FC] transition-colors retro-text text-[#f5f5f5] whitespace-nowrap"
             >
               Contact
             </a>
