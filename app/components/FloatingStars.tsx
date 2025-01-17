@@ -9,10 +9,13 @@ const FloatingStars = () => {
   const [hoveredStarId, setHoveredStarId] = useState(null);
   const containerRef = useRef(null);
 
+  // Defina a opacidade base das estrelas aqui (0.0 a 1.0)
+  const baseOpacity = 0.75;
+
   useEffect(() => {
     const generateStars = () => {
       const newStars = [];
-      const numStars = 15;
+      const numStars = 30;
 
       const docHeight = Math.max(
         document.body.scrollHeight,
@@ -32,6 +35,7 @@ const FloatingStars = () => {
           baseRotation: Math.random() * 360,
           scale: 0.8 + Math.random() * 0.4,
           floatDuration: 3 + Math.random() * 4,
+          opacity: baseOpacity + Math.random() * 0.2, // Adiciona uma pequena variação na opacidade
         });
       }
       return newStars;
@@ -87,6 +91,7 @@ const FloatingStars = () => {
               `,
               animation: `float ${star.floatDuration}s ease-in-out infinite`,
               transition: "all 0.3s ease-out",
+              opacity: star.opacity,
             }}
             onMouseEnter={() => setHoveredStarId(star.id)}
             onMouseLeave={() => setHoveredStarId(null)}
@@ -110,13 +115,13 @@ const FloatingStars = () => {
                 `}
               />
               {isHovered && (
-                <div className="absolute inset-0 animate-ping">
+                <div className="absolute inset-0 animate-ping opacity-75">
                   <Image
                     src={`/star-${star.variant}.png`}
                     alt="Star glow effect"
                     width={32}
                     height={32}
-                    className="w-8 h-8 opacity-75"
+                    className="w-8 h-8"
                   />
                 </div>
               )}
