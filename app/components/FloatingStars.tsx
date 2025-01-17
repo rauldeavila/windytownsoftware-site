@@ -5,30 +5,45 @@ import Image from "next/image";
 
 const FloatingStars = () => {
   const [stars, setStars] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
   const baseOpacity = 0.75;
 
   useEffect(() => {
+    // Check mobile only once at initialization
+    const checkMobile = window.innerWidth <= 768;
+    setIsMobile(checkMobile);
+
     const generateStars = () => {
       const newStars = [];
       const numStars = 25;
 
-      const docHeight = Math.max(
-        document.documentElement.scrollHeight,
-        document.documentElement.offsetHeight,
-        document.documentElement.clientHeight
-      );
+      // Use fixed dimensions for mobile
+      const screenWidth = checkMobile ? 360 : window.innerWidth;
+      const screenHeight = checkMobile
+        ? 800
+        : Math.max(
+            document.documentElement.scrollHeight,
+            document.documentElement.offsetHeight,
+            document.documentElement.clientHeight
+          );
 
       for (let i = 0; i < numStars; i++) {
-        const x = Math.random() * window.innerWidth;
-        const y = Math.random() * docHeight;
+        // For mobile, use percentage-based positioning instead of pixels
+        const x = checkMobile
+          ? `${Math.random() * 80 + 10}%` // 10% to 90% of width
+          : Math.max(
+              20,
+              Math.min(Math.random() * screenWidth, screenWidth - 20)
+            );
 
-        // Keep stars away from the edges
-        const safeX = Math.max(20, Math.min(x, window.innerWidth - 20));
+        const y = checkMobile
+          ? `${Math.random() * 80 + 10}%` // 10% to 90% of height
+          : Math.random() * screenHeight;
 
         newStars.push({
           id: i,
-          x: safeX,
-          y: y,
+          x,
+          y,
           variant: Math.floor(Math.random() * 4) + 1,
           baseRotation: Math.random() * 360,
           scale: 0.8 + Math.random() * 0.4,
@@ -40,12 +55,14 @@ const FloatingStars = () => {
     };
 
     setStars(generateStars());
-    window.addEventListener("resize", () => setStars(generateStars()));
 
-    return () => {
-      window.removeEventListener("resize", () => setStars(generateStars()));
-    };
-  }, []);
+    // Only add resize listener for desktop
+    if (!checkMobile) {
+      window.addEventListener("resize", () => setStars(generateStars()));
+      return () =>
+        window.removeEventListener("resize", () => setStars(generateStars()));
+    }
+  }, []); // Empty dependency array so it only runs once
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -54,8 +71,8 @@ const FloatingStars = () => {
           key={star.id}
           className="absolute"
           style={{
-            left: `${star.x}px`,
-            top: `${star.y}px`,
+            left: star.x,
+            top: star.y,
             transform: `rotate(${star.baseRotation}deg) scale(${star.scale})`,
             animation: `float ${star.floatDuration}s ease-in-out infinite`,
             opacity: star.opacity,
@@ -67,6 +84,7 @@ const FloatingStars = () => {
             width={32}
             height={32}
             className="w-8 h-8"
+            priority={true}
           />
         </div>
       ))}
