@@ -42,7 +42,7 @@ export default function Hero() {
         </h1>
         <div className="text-2xl mb-12 mt-[-20px] retro-text">
           <GradientText>
-            A blazing fast task and project manager for macOS
+            A retro-inspired task and project manager for macOS and iOS
           </GradientText>
         </div>
         <div className="flex justify-center mb-8">
