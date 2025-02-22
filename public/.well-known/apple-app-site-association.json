@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "5L5C42S46R.name.rajunior.TodoList",
+        "paths": ["/share*"]
+      }
+    ]
+  }
+}
