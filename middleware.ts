@@ -9,7 +9,7 @@ export function middleware(request: NextRequest) {
         apps: [],
         details: [
           {
-            appID: "5L5C42S46R.name.rajunior.TodoList",
+            appID: "SL5C42S46R.name.rajunior.TodoList",
             paths: ["/share*"]
           }
         ]
