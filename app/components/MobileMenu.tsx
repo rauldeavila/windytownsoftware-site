@@ -31,21 +31,14 @@ export default function MobileMenu() {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="absolute top-12 right-0 bg-[#333333] border-[1px] border-[#fafafa] p-4 min-w-[160px] shadow-lg rounded-lg">
+        <div className="absolute top-12 right-0 bg-white p-4 min-w-[160px] shadow-lg rounded-lg">
           <nav className="flex flex-col gap-4">
-            <Link
-              href="/blog"
-              onClick={() => setIsOpen(false)}
-              className="text-lg hover:text-[#97A8FC] transition-colors retro-text text-[#f5f5f5] whitespace-nowrap"
-            >
-              Blog
-            </Link>
             <a
               href="/#contact"
               onClick={handleContactClick}
-              className="text-lg hover:text-[#97A8FC] transition-colors retro-text text-[#f5f5f5] whitespace-nowrap"
+              className="text-lg font-medium text-gray-700 hover:text-black transition-colors"
             >
-              Contact
+              Get in touch
             </a>
           </nav>
         </div>

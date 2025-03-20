@@ -3,7 +3,6 @@
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 import { useRouter } from "next/navigation";
-import GradientText from "./GradientText";
 
 export default function Header() {
   const router = useRouter();
@@ -14,48 +13,33 @@ export default function Header() {
   };
 
   return (
-    <header className="relative w-full">
-      <div className="border-b-[1px] border-[#fafafa] bg-[#333333] p-4 shadow-[0_4px_0_0_#333333]">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <Link
-            href="/"
-            className="flex items-center text-2xl sm:text-3xl md:text-4xl font-bold retro-text text-[#f5f5f5]"
-          >
-            <GradientText>
-              <span className="tracking-[-0.01em] text-[#f5f5f5] whitespace-nowrap">
-                windytown
-              </span>
-            </GradientText>
-            <span className="text-[#B3B3B3] tracking-[-0.01em] ml-0.5 whitespace-nowrap">
-              software
-            </span>
-          </Link>
-          {/* Menu Desktop */}
-          <nav className="hidden md:block">
-            <ul className="flex space-x-6">
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-xl hover:text-[#97A8FC] transition-colors retro-text text-[#f5f5f5]"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="/#contact"
-                  onClick={handleContactClick}
-                  className="text-xl hover:text-[#97A8FC] transition-colors retro-text text-[#f5f5f5]"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </nav>
-          {/* Menu Mobile */}
-          <div className="flex items-center md:hidden">
-            <MobileMenu />
-          </div>
+    <header className="relative w-full py-4">
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        <Link
+          href="/"
+          className="flex items-center text-2xl sm:text-3xl font-bold"
+        >
+          <span className="text-black">
+            windytownsoftware
+          </span>
+        </Link>
+        {/* Menu Desktop */}
+        <nav className="hidden md:block">
+          <ul className="flex space-x-6">
+            <li>
+              <a
+                href="/#contact"
+                onClick={handleContactClick}
+                className="text-lg font-medium text-gray-700 hover:text-black transition-colors"
+              >
+                Get in touch
+              </a>
+            </li>
+          </ul>
+        </nav>
+        {/* Menu Mobile */}
+        <div className="flex items-center md:hidden">
+          <MobileMenu />
         </div>
       </div>
     </header>

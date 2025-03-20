@@ -1,13 +1,17 @@
 import Hero from './components/Hero'
-import ProductShowcase from './components/ProductShowcase'
+import KeyFeatures from './components/ContextsFeatures'
 import ContactForm from './components/ContactForm'
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4">
-      <Hero />
-      <ProductShowcase />
-      <ContactForm />
+    <div>
+      <div className="container mx-auto px-4">
+        <Hero />
+      </div>
+      <KeyFeatures />
+      <div className="container mx-auto px-4">
+        <ContactForm />
+      </div>
     </div>
   )
 }

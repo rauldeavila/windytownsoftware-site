@@ -2,13 +2,12 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import GradientText from "./GradientText";
 
 export default function Hero() {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isHovered) return;
 
     const image = e.currentTarget;
@@ -35,46 +34,59 @@ export default function Hero() {
   return (
     <section className="py-12 md:py-24">
       <div className="container mx-auto text-center">
-        <h1 className="text-6xl md:text-9xl font-bold mb-6 retro-text">
-          <GradientText className="relative inline-block">
-            Task Wizard
-          </GradientText>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+          Contexts
         </h1>
-        <div className="text-2xl mb-12 mt-[-20px] retro-text">
-          <GradientText>
-            A retro-inspired task and project manager for macOS and iOS
-          </GradientText>
+
+        <div className="max-w-3xl mx-auto mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-black">
+            The right task,<br />
+            in the right place,<br />
+            at the right time.
+          </h2>
         </div>
-        <div className="flex justify-center mb-8">
-          <div
-            style={{
-              transform: `perspective(1000px) rotateX(${
-                rotation.x
-              }deg) rotateY(${rotation.y}deg) scale(${isHovered ? 1.02 : 1})`,
-              transition: "all 0.15s ease",
-              willChange: "transform",
-            }}
-            onMouseMove={handleMouseMove}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
+
+        <div className="flex justify-center mb-16">
+          <a href="https://apps.apple.com/app/contexts/id1547991744" className="hover:opacity-90 transition-all">
             <Image
-              src="/projects-ss-1.png"
-              alt="task wizard - macOS App"
-              width={1000}
-              height={600}
-              className="rounded-lg shadow-2xl"
-              style={{ pointerEvents: "none" }}
+              src="/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg"
+              alt="Download on the App Store"
+              width={200}
+              height={67}
             />
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <a
-            href="#"
-            className="px-6 py-3 mt-[60px] mb-[-60px] text-xl retro-button retro-text"
-          >
-            Download Now
           </a>
+        </div>
+
+        <div
+          style={{
+            transform: `perspective(1000px) rotateX(${
+              rotation.x
+            }deg) rotateY(${rotation.y}deg) scale(${isHovered ? 1.02 : 1})`,
+            transition: "all 0.15s ease",
+            willChange: "transform",
+          }}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="relative mx-auto max-w-[350px]"
+        >
+          {/* iPhone frame */}
+          <Image
+            src="/contexts/iphone-frame.png"
+            alt="iPhone frame"
+            width={350}
+            height={700}
+            className="relative z-10"
+            priority
+          />
+          {/* App screenshot */}
+          <Image
+            src="/contexts/screenshot.png"
+            alt="Contexts app screenshot"
+            width={320}
+            height={650}
+            className="absolute top-[8px] left-[15px] z-0 rounded-[32px]"
+          />
         </div>
       </div>
     </section>
