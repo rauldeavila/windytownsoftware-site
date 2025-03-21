@@ -34,12 +34,12 @@ export default function Hero() {
   return (
     <section className="py-12 md:py-24">
       <div className="container mx-auto text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+        <h1 className="text-4xl md:text-7xl font-bold mb-8 text-gray-500 cooper-black">
           Contexts
         </h1>
 
         <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-black">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 mt-10 text-black eb-garamond">
             The right task,<br />
             in the right place,<br />
             at the right time.
@@ -59,9 +59,7 @@ export default function Hero() {
 
         <div
           style={{
-            transform: `perspective(1000px) rotateX(${
-              rotation.x
-            }deg) rotateY(${rotation.y}deg) scale(${isHovered ? 1.02 : 1})`,
+            transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale(${isHovered ? 1.02 : 1})`,
             transition: "all 0.15s ease",
             willChange: "transform",
           }}

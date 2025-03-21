@@ -19,8 +19,11 @@ export default function Header() {
           href="/"
           className="flex items-center text-2xl sm:text-3xl font-bold"
         >
-          <span className="text-black">
-            windytownsoftware
+          <span className="text-black block-berthold">
+            windytown
+          </span>
+          <span className="text-gray-500 eb-garamond font-bold text-4xl relative -top-0.5 pl-1">
+            software
           </span>
         </Link>
         {/* Menu Desktop */}
@@ -30,7 +33,7 @@ export default function Header() {
               <a
                 href="/#contact"
                 onClick={handleContactClick}
-                className="text-lg font-medium text-gray-700 hover:text-black transition-colors"
+                className="text-lg font-medium text-gray-700 hover:text-black transition-colors eb-garamond"
               >
                 Get in touch
               </a>
