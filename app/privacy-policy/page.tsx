@@ -8,7 +8,7 @@ export default function PrivacyPolicyIndex() {
 
       <p className="mb-6">
         At windytown software, we respect your privacy and are committed to protecting your personal information.
-        Below you'll find links to the privacy policies for our various apps and services.
+        Below you'll find links to the privacy policies for our apps and services.
       </p>
 
       <div className="grid gap-4">

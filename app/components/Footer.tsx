@@ -8,11 +8,15 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} windytownsoftware. All rights
           reserved.
         </p>
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center space-x-4 mb-4">
           <Link href="/privacy-policy" className="text-sm text-gray-700 hover:text-black transition-colors">
             Privacy Policy
           </Link>
         </div>
+        <p className="text-xs text-gray-500 max-w-2xl mx-auto">
+          GTD® and Getting Things Done® are registered trademarks of the David Allen Company.
+          Windytown Software and Contexts are not affiliated with or endorsed by the David Allen Company.
+        </p>
       </div>
     </footer>
   );
