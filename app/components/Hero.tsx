@@ -53,7 +53,7 @@ export default function Hero() {
         </div>
 
         <div className="flex justify-center mb-16">
-          <a href="https://apps.apple.com/app/contexts/id1547991744" className="hover:opacity-90 transition-all">
+          <a href="https://apps.apple.com/br/app/contexts/id6743253834" className="hover:opacity-90 transition-all">
             <Image
               src="/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg"
               alt="Download on the App Store"
