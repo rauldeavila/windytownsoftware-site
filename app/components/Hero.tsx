@@ -34,9 +34,15 @@ export default function Hero() {
   return (
     <section className="py-12 md:py-24">
       <div className="container mx-auto text-center">
-        <h1 className="text-4xl md:text-7xl font-bold mb-8 text-gray-500 cooper-black">
-          Contexts
-        </h1>
+        <div className="flex justify-center -mt-10 mb-8">
+          <Image
+            src="/contexts/icon.png"
+            alt="Contexts icon"
+            width={200}
+            height={200}
+            className="h-auto"
+          />
+        </div>
 
         <div className="max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-8 mt-10 text-black eb-garamond">

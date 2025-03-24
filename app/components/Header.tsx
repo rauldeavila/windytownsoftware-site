@@ -19,12 +19,9 @@ export default function Header() {
           href="/"
           className="flex items-center text-2xl sm:text-3xl font-bold"
         >
-          <span className="text-black block-berthold">
-            windytown
-          </span>
-          <span className="text-gray-500 eb-garamond font-bold text-4xl relative -top-0.5 pl-1">
-            software
-          </span>
+          <div>
+            <span className="text-black linik-sans-extrabold">windytown</span><span className="text-gray-500 linik-sans-italic">software</span>
+          </div>
         </Link>
         {/* Menu Desktop */}
         <nav className="hidden md:block">
