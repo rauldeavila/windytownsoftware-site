@@ -57,7 +57,7 @@ export default function ContextsHeader() {
           </Link>
           <a
             href="https://apps.apple.com/br/app/contexts/id6743253834"
-            className="bg-black text-white px-4 py-2 rounded-md rounded-[12px] hover:bg-gray-800 transition-colors"
+            className="bg-black text-white px-4 py-2 rounded-md rounded-[16px] hover:bg-gray-800 transition-colors"
           >
             Download Contexts
           </a>
