@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="p-6 mt-8">
       <div className="container mx-auto text-center">
         <p className="text-sm text-gray-700 mb-2">
-          &copy; {new Date().getFullYear()} windytownsoftware. All rights
+          &copy; {new Date().getFullYear()} <Link href="/" className="hover:text-black transition-colors">windytownsoftware</Link>. All rights
           reserved.
         </p>
         <div className="flex justify-center space-x-4 mb-4">

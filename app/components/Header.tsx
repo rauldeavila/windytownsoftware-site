@@ -27,12 +27,28 @@ export default function Header() {
         <nav className="hidden md:block">
           <ul className="flex space-x-6">
             <li>
+              <Link
+                href="/apps/contexts"
+                className="text-lg font-medium text-gray-700 hover:text-black transition-colors linik-sans"
+              >
+                Contexts
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about"
+                className="text-lg font-medium text-gray-700 hover:text-black transition-colors linik-sans"
+              >
+                About
+              </Link>
+            </li>
+            <li>
               <a
                 href="/#contact"
                 onClick={handleContactClick}
-                className="text-lg font-medium text-gray-700 hover:text-black transition-colors eb-garamond"
+                className="text-lg font-medium text-gray-700 hover:text-black transition-colors linik-sans"
               >
-                Get in touch
+                Contact
               </a>
             </li>
           </ul>

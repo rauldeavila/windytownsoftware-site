@@ -33,12 +33,26 @@ export default function MobileMenu() {
       {isOpen && (
         <div className="absolute top-12 right-0 bg-white p-4 min-w-[160px] shadow-lg rounded-lg">
           <nav className="flex flex-col gap-4">
+            <Link
+              href="/apps/contexts"
+              onClick={() => setIsOpen(false)}
+              className="text-lg font-medium text-gray-700 hover:text-black transition-colors linik-sans"
+            >
+              Contexts
+            </Link>
+            <Link
+              href="/about"
+              onClick={() => setIsOpen(false)}
+              className="text-lg font-medium text-gray-700 hover:text-black transition-colors linik-sans"
+            >
+              About
+            </Link>
             <a
               href="/#contact"
               onClick={handleContactClick}
-              className="text-lg font-medium text-gray-700 hover:text-black transition-colors"
+              className="text-lg font-medium text-gray-700 hover:text-black transition-colors linik-sans"
             >
-              Get in touch
+              Contact
             </a>
           </nav>
         </div>

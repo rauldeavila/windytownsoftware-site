@@ -1,8 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import FloatingStars from "./components/FloatingStars";
+import { LayoutProvider } from "./components/LayoutProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -47,16 +45,9 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className={`bg-[#c6c6c6] text-[#333] relative min-h-screen`}>
-        {/* FloatingStars component temporarily disabled
-        <div className="absolute inset-0">
-          <FloatingStars />
-        </div>
-        */}
-        <div className="flex flex-col min-h-screen relative z-10">
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
+        <LayoutProvider>
+          {children}
+        </LayoutProvider>
       </body>
     </html>
   );
