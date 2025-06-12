@@ -7,12 +7,13 @@ import Footer from "./Footer";
 export function LayoutProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isContextsApp = pathname.startsWith('/apps/contexts');
+  const isSpecialPage = pathname === '/meu-amoi';
 
   return (
     <div className="flex flex-col min-h-screen relative z-10">
-      {!isContextsApp && <Header />}
+      {!isContextsApp && !isSpecialPage && <Header />}
       <main className="flex-grow">{children}</main>
-      <Footer />
+      {!isSpecialPage && <Footer />}
     </div>
   );
 }
