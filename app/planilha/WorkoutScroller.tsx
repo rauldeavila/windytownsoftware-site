@@ -53,8 +53,10 @@ export default function WorkoutScroller({ blocks }: Props) {
       className="h-[80vh] min-h-screen overflow-y-auto flex flex-col items-center px-2 scroll-smooth"
       style={{ scrollSnapType: 'y mandatory' }}
     >
+      {/* Spacer invisível para centralizar o primeiro bloco */}
+      <div style={{ height: '40vh', minHeight: 64 }} aria-hidden="true" />
       {blocks.map((block, idx) => (
-        <div key={block.label + idx} className={`w-full flex flex-col items-center ${idx === 0 ? 'mt-16' : ''} ${idx === blocks.length - 1 ? 'mb-16' : ''}`}>
+        <div key={block.label + idx} className={`w-full flex flex-col items-center ${idx === 0 ? '' : ''} ${idx === blocks.length - 1 ? '' : ''}`}>
           {/* Linha acima do bloco (exceto o primeiro) */}
           {idx > 0 && (
             <div className="w-full flex justify-center select-none mt-8 mb-2">
@@ -76,6 +78,8 @@ export default function WorkoutScroller({ blocks }: Props) {
           </div>
         </div>
       ))}
+      {/* Spacer invisível para centralizar o último bloco */}
+      <div style={{ height: '40vh', minHeight: 64 }} aria-hidden="true" />
     </div>
   );
 }
