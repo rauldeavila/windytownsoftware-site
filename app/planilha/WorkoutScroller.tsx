@@ -79,7 +79,7 @@ export default function WorkoutScroller({ blocks }: Props) {
         </div>
       ))}
       {/* Spacer invisível para centralizar o último bloco */}
-      <div style={{ height: '40vh', minHeight: 64 }} aria-hidden="true" />
+      <div style={{ height: '100vh', minHeight: 100 }} aria-hidden="true" />
     </div>
   );
 }
