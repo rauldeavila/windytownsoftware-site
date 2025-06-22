@@ -1,10 +1,10 @@
 'use client';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import WorkoutScroller from './WorkoutScroller';
 import { workouts } from '../../src/data/workouts';
 
 function formatHeader(day) {
-  return `${day.week} - ${capitalize(day.day.toLowerCase())}`;
+  return day ? `${day.week} - ${capitalize(day.day.toLowerCase())}` : '';
 }
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -34,24 +34,15 @@ function getTodayDate() {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-function getClosestDate(dateStr) {
-  // Se não houver treino para hoje, retorna o mais próximo anterior
-  const idx = workouts.findIndex(w => w.date === dateStr);
-  if (idx !== -1) return dateStr;
-  // Busca o mais próximo anterior
-  for (let i = workouts.length - 1; i >= 0; i--) {
-    if (workouts[i].date < dateStr) return workouts[i].date;
-  }
-  // Se não houver anterior, retorna o primeiro
-  return workouts[0].date;
-}
-
 export default function PlanilhaPage() {
-  // Inicializa com o treino do dia atual (ou o mais próximo anterior)
-  const [selectedDate, setSelectedDate] = useState(() => getClosestDate(getTodayDate()));
+  // Sempre começa com o dia de hoje, mesmo se não houver treino
+  const [selectedDate, setSelectedDate] = useState(getTodayDate());
   const [showCalendar, setShowCalendar] = useState(false);
   const [swipeAnim, setSwipeAnim] = useState<'left' | 'right' | null>(null);
+  const [transitioning, setTransitioning] = useState(false);
+  const [nextDate, setNextDate] = useState<string | null>(null);
   const workout = findWorkoutByDate(selectedDate);
+  const nextWorkout = nextDate ? findWorkoutByDate(nextDate) : null;
 
   // Swipe handler
   const touchStartX = useRef(0);
@@ -59,30 +50,45 @@ export default function PlanilhaPage() {
   const minSwipe = 50; // px
 
   function onTouchStart(e) {
+    if (transitioning) return;
     touchStartX.current = e.changedTouches[0].clientX;
   }
   function onTouchEnd(e) {
+    if (transitioning) return;
     touchEndX.current = e.changedTouches[0].clientX;
     const diff = touchEndX.current - touchStartX.current;
     if (Math.abs(diff) > minSwipe) {
       if (diff < 0) {
         // Swipe para a esquerda: próximo dia
-        setSwipeAnim('right');
-        setTimeout(() => setSwipeAnim(null), 400);
-        setTimeout(() => setSelectedDate(getNextDate(selectedDate)), 150);
+        const next = getNextDate(selectedDate);
+        if (next !== selectedDate) {
+          setNextDate(next);
+          setSwipeAnim('right');
+          setTransitioning(true);
+          setTimeout(() => {
+            setSelectedDate(next);
+            setSwipeAnim(null);
+            setTransitioning(false);
+            setNextDate(null);
+          }, 350);
+        }
       } else {
         // Swipe para a direita: dia anterior
-        setSwipeAnim('left');
-        setTimeout(() => setSwipeAnim(null), 400);
-        setTimeout(() => setSelectedDate(getPrevDate(selectedDate)), 150);
+        const prev = getPrevDate(selectedDate);
+        if (prev !== selectedDate) {
+          setNextDate(prev);
+          setSwipeAnim('left');
+          setTransitioning(true);
+          setTimeout(() => {
+            setSelectedDate(prev);
+            setSwipeAnim(null);
+            setTransitioning(false);
+            setNextDate(null);
+          }, 350);
+        }
       }
     }
   }
-
-  // Remove animação se trocar de dia por outros meios
-  useEffect(() => {
-    setSwipeAnim(null);
-  }, [selectedDate]);
 
   return (
     <main className="min-h-screen bg-neutral-900 text-white flex flex-col items-center">
@@ -92,7 +98,7 @@ export default function PlanilhaPage() {
           className="text-lg font-bold tracking-wide px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white"
           onClick={() => setShowCalendar(true)}
         >
-          {workout ? formatHeader(workout) : 'Selecione um dia'}
+          {workout ? formatHeader(workout) : 'Nenhum treino para este dia.'}
         </button>
         {showCalendar && (
           <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/40" onClick={() => setShowCalendar(false)}>
@@ -113,68 +119,79 @@ export default function PlanilhaPage() {
         )}
       </div>
       <div
-        className={
-          `w-full max-w-md flex-1 relative transition-transform duration-300 ` +
-          (swipeAnim === 'left' ? ' apple-swipe-left ' : '') +
-          (swipeAnim === 'right' ? ' apple-swipe-right ' : '')
-        }
+        className="w-full max-w-md flex-1 relative overflow-x-hidden"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
+        style={{ minHeight: 400 }}
       >
-        {/* Bordas e slide animados via CSS */}
+        {/* Slide/Swipe animado estilo Apple */}
         <style jsx>{`
-          .apple-swipe-left {
-            animation: appleSlideLeft 0.4s cubic-bezier(.4,0,.2,1);
-            box-shadow: -8px 0 24px 0 #38bdf8cc;
-          }
-          .apple-swipe-left::before {
-            content: '';
+          .slide-anim {
             position: absolute;
-            left: 0; top: 0; bottom: 0;
-            width: 10px;
+            left: 0; top: 0; width: 100%; height: 100%;
+            transition: transform 0.35s cubic-bezier(.4,0,.2,1), opacity 0.35s cubic-bezier(.4,0,.2,1);
+            z-index: 10;
+          }
+          .slide-out-left { transform: translateX(-100%); opacity: 0; }
+          .slide-in-right { transform: translateX(100%); opacity: 0; }
+          .slide-in-right-active { transform: translateX(0); opacity: 1; }
+          .slide-out-right { transform: translateX(100%); opacity: 0; }
+          .slide-in-left { transform: translateX(-100%); opacity: 0; }
+          .slide-in-left-active { transform: translateX(0); opacity: 1; }
+          .swipe-border {
+            position: absolute;
+            top: 0; bottom: 0; width: 12px;
             background: linear-gradient(180deg, #38bdf8 60%, #0ea5e9 100%);
             border-radius: 8px;
             box-shadow: 0 0 24px 8px #38bdf8aa;
-            z-index: 40;
-            animation: fadeBorder 0.4s linear;
+            z-index: 30;
+            animation: fadeBorder 0.35s linear;
           }
-          .apple-swipe-right {
-            animation: appleSlideRight 0.4s cubic-bezier(.4,0,.2,1);
-            box-shadow: 8px 0 24px 0 #38bdf8cc;
-          }
-          .apple-swipe-right::after {
-            content: '';
-            position: absolute;
-            right: 0; top: 0; bottom: 0;
-            width: 10px;
-            background: linear-gradient(180deg, #38bdf8 60%, #0ea5e9 100%);
-            border-radius: 8px;
-            box-shadow: 0 0 24px 8px #38bdf8aa;
-            z-index: 40;
-            animation: fadeBorder 0.4s linear;
-          }
-          @keyframes appleSlideLeft {
-            0% { transform: translateX(0); }
-            30% { transform: translateX(40px); }
-            60% { transform: translateX(-16px); }
-            100% { transform: translateX(0); }
-          }
-          @keyframes appleSlideRight {
-            0% { transform: translateX(0); }
-            30% { transform: translateX(-40px); }
-            60% { transform: translateX(16px); }
-            100% { transform: translateX(0); }
-          }
+          .swipe-border.left { left: 0; }
+          .swipe-border.right { right: 0; }
           @keyframes fadeBorder {
             from { opacity: 1; }
             to { opacity: 0; }
           }
         `}</style>
-        {workout ? (
-          <WorkoutScroller blocks={workout.blocks} />
-        ) : (
-          <div className="text-center mt-32 text-lg">Nenhum treino para este dia.</div>
-        )}
+        {/* Conteúdo principal e animação de swipe */}
+        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+          {/* Bloco atual */}
+          <div
+            className={
+              transitioning
+                ? swipeAnim === 'right'
+                  ? 'slide-anim slide-out-left'
+                  : 'slide-anim slide-out-right'
+                : 'slide-anim'
+            }
+            style={{ zIndex: 20 }}
+          >
+            {workout ? (
+              <WorkoutScroller blocks={workout.blocks} />
+            ) : (
+              <div className="text-center mt-32 text-lg">Nenhum treino para este dia.</div>
+            )}
+          </div>
+          {/* Bloco novo entrando */}
+          {transitioning && nextWorkout && (
+            <div
+              className={
+                'slide-anim ' +
+                (swipeAnim === 'right'
+                  ? 'slide-in-right slide-in-right-active'
+                  : 'slide-in-left slide-in-left-active')
+              }
+              style={{ zIndex: 25 }}
+            >
+              <WorkoutScroller blocks={nextWorkout.blocks} />
+            </div>
+          )}
+          {/* Bordas coloridas animadas */}
+          {transitioning && (
+            <div className={`swipe-border ${swipeAnim === 'right' ? 'right' : 'left'}`} />
+          )}
+        </div>
       </div>
     </main>
   );
