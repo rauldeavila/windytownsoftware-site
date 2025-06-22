@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import WorkoutScroller from './WorkoutScroller';
 import { workouts } from '../../src/data/workouts';
 
@@ -14,11 +14,45 @@ function findWorkoutByDate(dateStr) {
   return workouts.find(w => w.date === dateStr);
 }
 
+function getNextDate(dateStr) {
+  const idx = workouts.findIndex(w => w.date === dateStr);
+  if (idx >= 0 && idx < workouts.length - 1) return workouts[idx + 1].date;
+  return dateStr;
+}
+
+function getPrevDate(dateStr) {
+  const idx = workouts.findIndex(w => w.date === dateStr);
+  if (idx > 0) return workouts[idx - 1].date;
+  return dateStr;
+}
+
 export default function PlanilhaPage() {
   // Data inicial: próxima segunda-feira (2025-06-23)
   const [selectedDate, setSelectedDate] = useState('2025-06-23');
   const [showCalendar, setShowCalendar] = useState(false);
   const workout = findWorkoutByDate(selectedDate);
+
+  // Swipe handler
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+  const minSwipe = 50; // px
+
+  function onTouchStart(e) {
+    touchStartX.current = e.changedTouches[0].clientX;
+  }
+  function onTouchEnd(e) {
+    touchEndX.current = e.changedTouches[0].clientX;
+    const diff = touchEndX.current - touchStartX.current;
+    if (Math.abs(diff) > minSwipe) {
+      if (diff < 0) {
+        // Swipe para a esquerda: próximo dia
+        setSelectedDate(getNextDate(selectedDate));
+      } else {
+        // Swipe para a direita: dia anterior
+        setSelectedDate(getPrevDate(selectedDate));
+      }
+    }
+  }
 
   return (
     <main className="min-h-screen bg-neutral-900 text-white flex flex-col items-center">
@@ -48,7 +82,11 @@ export default function PlanilhaPage() {
           </div>
         )}
       </div>
-      <div className="w-full max-w-md flex-1">
+      <div
+        className="w-full max-w-md flex-1"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         {workout ? (
           <WorkoutScroller blocks={workout.blocks} />
         ) : (
