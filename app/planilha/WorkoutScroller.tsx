@@ -54,7 +54,7 @@ export default function WorkoutScroller({ blocks }: Props) {
       style={{ scrollSnapType: 'y mandatory' }}
     >
       {blocks.map((block, idx) => (
-        <div key={block.label + idx} className="w-full flex flex-col items-center">
+        <div key={block.label + idx} className={`w-full flex flex-col items-center ${idx === 0 ? 'mt-16' : ''} ${idx === blocks.length - 1 ? 'mb-16' : ''}`}>
           {/* Linha acima do bloco (exceto o primeiro) */}
           {idx > 0 && (
             <div className="w-full flex justify-center select-none mt-8 mb-2">
