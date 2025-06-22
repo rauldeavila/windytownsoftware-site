@@ -8,12 +8,13 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isContextsApp = pathname.startsWith('/apps/contexts');
   const isSpecialPage = pathname === '/meu-amoi';
+  const isPlanilha = pathname.startsWith('/planilha');
 
   return (
     <div className="flex flex-col min-h-screen relative z-10">
-      {!isContextsApp && !isSpecialPage && <Header />}
+      {!isContextsApp && !isSpecialPage && !isPlanilha && <Header />}
       <main className="flex-grow">{children}</main>
-      {!isSpecialPage && <Footer />}
+      {!isSpecialPage && !isPlanilha && <Footer />}
     </div>
   );
 }
