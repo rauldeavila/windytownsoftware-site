@@ -19,6 +19,20 @@ function formatDate(dateStr) {
 function findWorkoutByDate(dateStr) {
   return workouts.find(w => w.date === dateStr);
 }
+function getNextDateWithWorkout(dateStr) {
+  const idx = workouts.findIndex(w => w.date === dateStr);
+  for (let i = idx + 1; i < workouts.length; i++) {
+    if (workouts[i].blocks && workouts[i].blocks.length > 0) return workouts[i].date;
+  }
+  return dateStr;
+}
+function getPrevDateWithWorkout(dateStr) {
+  const idx = workouts.findIndex(w => w.date === dateStr);
+  for (let i = idx - 1; i >= 0; i--) {
+    if (workouts[i].blocks && workouts[i].blocks.length > 0) return workouts[i].date;
+  }
+  return dateStr;
+}
 function getNextDate(dateStr) {
   const idx = workouts.findIndex(w => w.date === dateStr);
   if (idx >= 0 && idx < workouts.length - 1) return workouts[idx + 1].date;
@@ -57,15 +71,15 @@ export default function PlanilhaPage() {
     const diff = touchEndX.current - touchStartX.current;
     if (Math.abs(diff) > minSwipe) {
       if (diff < 0) {
-        // Swipe para a esquerda: próximo dia
+        // Swipe para a esquerda: próximo dia COM treino
         setSwipeBorder('right');
         setTimeout(() => setSwipeBorder(null), 300);
-        setSelectedDate(getNextDate(selectedDate));
+        setSelectedDate(getNextDateWithWorkout(selectedDate));
       } else {
-        // Swipe para a direita: dia anterior
+        // Swipe para a direita: dia anterior COM treino
         setSwipeBorder('left');
         setTimeout(() => setSwipeBorder(null), 300);
-        setSelectedDate(getPrevDate(selectedDate));
+        setSelectedDate(getPrevDateWithWorkout(selectedDate));
       }
     }
   }
@@ -84,6 +98,7 @@ export default function PlanilhaPage() {
           <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/40" onClick={() => setShowCalendar(false)}>
             <div className="mt-24 bg-neutral-800 rounded-lg p-4 shadow-lg" onClick={e => e.stopPropagation()}>
               <input
+                autoFocus
                 type="date"
                 className="bg-neutral-700 text-white rounded px-2 py-1"
                 value={selectedDate}
@@ -114,9 +129,9 @@ export default function PlanilhaPage() {
             position: absolute;
             left: 0; top: 0; bottom: 0;
             width: 8px;
-            background: #38bdf8;
+            background: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 16px 4px #38bdf8aa;
+            box-shadow: 0 0 16px 4px #fff8;
             z-index: 40;
             animation: fadeBorder 0.3s linear;
           }
@@ -125,9 +140,9 @@ export default function PlanilhaPage() {
             position: absolute;
             right: 0; top: 0; bottom: 0;
             width: 8px;
-            background: #38bdf8;
+            background: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 16px 4px #38bdf8aa;
+            box-shadow: 0 0 16px 4px #fff8;
             z-index: 40;
             animation: fadeBorder 0.3s linear;
           }
