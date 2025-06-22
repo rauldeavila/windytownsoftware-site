@@ -31,6 +31,10 @@ export default function PlanilhaPage() {
 
   return (
     <main className="min-h-screen bg-neutral-900 text-white flex flex-col items-center">
+      {/* Header fixo abaixo do notch */}
+      <div className="fixed top-0 left-0 w-full z-50 flex justify-center items-center pt-[env(safe-area-inset-top)] pb-2 bg-neutral-900/80 backdrop-blur-md">
+        <span className="text-lg font-bold tracking-wide">PRIMEIRA SEMANA - Segunda</span>
+      </div>
       <div className="w-full max-w-md flex-1">
         <WorkoutScroller blocks={blocks} />
       </div>
