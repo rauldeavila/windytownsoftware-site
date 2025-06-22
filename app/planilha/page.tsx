@@ -1,5 +1,5 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import WorkoutScroller from './WorkoutScroller';
 import { workouts } from '../../src/data/workouts';
 
@@ -26,11 +26,31 @@ function getPrevDate(dateStr) {
   return dateStr;
 }
 
+function getTodayDate() {
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  return `${yyyy}-${mm}-${dd}`;
+}
+
+function getClosestDate(dateStr) {
+  // Se não houver treino para hoje, retorna o mais próximo anterior
+  const idx = workouts.findIndex(w => w.date === dateStr);
+  if (idx !== -1) return dateStr;
+  // Busca o mais próximo anterior
+  for (let i = workouts.length - 1; i >= 0; i--) {
+    if (workouts[i].date < dateStr) return workouts[i].date;
+  }
+  // Se não houver anterior, retorna o primeiro
+  return workouts[0].date;
+}
+
 export default function PlanilhaPage() {
-  // Data inicial: próxima segunda-feira (2025-06-23)
-  const [selectedDate, setSelectedDate] = useState('2025-06-23');
+  // Inicializa com o treino do dia atual (ou o mais próximo anterior)
+  const [selectedDate, setSelectedDate] = useState(() => getClosestDate(getTodayDate()));
   const [showCalendar, setShowCalendar] = useState(false);
-  const [swipeBorder, setSwipeBorder] = useState<'left' | 'right' | null>(null);
+  const [swipeAnim, setSwipeAnim] = useState<'left' | 'right' | null>(null);
   const workout = findWorkoutByDate(selectedDate);
 
   // Swipe handler
@@ -47,17 +67,22 @@ export default function PlanilhaPage() {
     if (Math.abs(diff) > minSwipe) {
       if (diff < 0) {
         // Swipe para a esquerda: próximo dia
-        setSwipeBorder('right');
-        setTimeout(() => setSwipeBorder(null), 300);
-        setSelectedDate(getNextDate(selectedDate));
+        setSwipeAnim('right');
+        setTimeout(() => setSwipeAnim(null), 400);
+        setTimeout(() => setSelectedDate(getNextDate(selectedDate)), 150);
       } else {
         // Swipe para a direita: dia anterior
-        setSwipeBorder('left');
-        setTimeout(() => setSwipeBorder(null), 300);
-        setSelectedDate(getPrevDate(selectedDate));
+        setSwipeAnim('left');
+        setTimeout(() => setSwipeAnim(null), 400);
+        setTimeout(() => setSelectedDate(getPrevDate(selectedDate)), 150);
       }
     }
   }
+
+  // Remove animação se trocar de dia por outros meios
+  useEffect(() => {
+    setSwipeAnim(null);
+  }, [selectedDate]);
 
   return (
     <main className="min-h-screen bg-neutral-900 text-white flex flex-col items-center">
@@ -89,36 +114,56 @@ export default function PlanilhaPage() {
       </div>
       <div
         className={
-          `w-full max-w-md flex-1 relative ` +
-          (swipeBorder === 'left' ? ' swipe-border-left ' : '') +
-          (swipeBorder === 'right' ? ' swipe-border-right ' : '')
+          `w-full max-w-md flex-1 relative transition-transform duration-300 ` +
+          (swipeAnim === 'left' ? ' apple-swipe-left ' : '') +
+          (swipeAnim === 'right' ? ' apple-swipe-right ' : '')
         }
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
-        {/* Bordas animadas via CSS */}
+        {/* Bordas e slide animados via CSS */}
         <style jsx>{`
-          .swipe-border-left::before {
+          .apple-swipe-left {
+            animation: appleSlideLeft 0.4s cubic-bezier(.4,0,.2,1);
+            box-shadow: -8px 0 24px 0 #38bdf8cc;
+          }
+          .apple-swipe-left::before {
             content: '';
             position: absolute;
             left: 0; top: 0; bottom: 0;
-            width: 8px;
-            background: #38bdf8;
+            width: 10px;
+            background: linear-gradient(180deg, #38bdf8 60%, #0ea5e9 100%);
             border-radius: 8px;
-            box-shadow: 0 0 16px 4px #38bdf8aa;
+            box-shadow: 0 0 24px 8px #38bdf8aa;
             z-index: 40;
-            animation: fadeBorder 0.3s linear;
+            animation: fadeBorder 0.4s linear;
           }
-          .swipe-border-right::after {
+          .apple-swipe-right {
+            animation: appleSlideRight 0.4s cubic-bezier(.4,0,.2,1);
+            box-shadow: 8px 0 24px 0 #38bdf8cc;
+          }
+          .apple-swipe-right::after {
             content: '';
             position: absolute;
             right: 0; top: 0; bottom: 0;
-            width: 8px;
-            background: #38bdf8;
+            width: 10px;
+            background: linear-gradient(180deg, #38bdf8 60%, #0ea5e9 100%);
             border-radius: 8px;
-            box-shadow: 0 0 16px 4px #38bdf8aa;
+            box-shadow: 0 0 24px 8px #38bdf8aa;
             z-index: 40;
-            animation: fadeBorder 0.3s linear;
+            animation: fadeBorder 0.4s linear;
+          }
+          @keyframes appleSlideLeft {
+            0% { transform: translateX(0); }
+            30% { transform: translateX(40px); }
+            60% { transform: translateX(-16px); }
+            100% { transform: translateX(0); }
+          }
+          @keyframes appleSlideRight {
+            0% { transform: translateX(0); }
+            30% { transform: translateX(-40px); }
+            60% { transform: translateX(16px); }
+            100% { transform: translateX(0); }
           }
           @keyframes fadeBorder {
             from { opacity: 1; }
