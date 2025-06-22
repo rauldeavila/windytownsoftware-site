@@ -1,0 +1,16 @@
+{
+  "name": "Windytown Planilha",
+  "short_name": "Planilha",
+  "start_url": "/planilha",
+  "display": "standalone",
+  "background_color": "#171717",
+  "theme_color": "#171717",
+  "description": "Planilha de treinos CrossFit Windytown",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
