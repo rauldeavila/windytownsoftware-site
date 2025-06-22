@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import WorkoutScroller from './WorkoutScroller';
 import { workouts } from '../../src/data/workouts';
