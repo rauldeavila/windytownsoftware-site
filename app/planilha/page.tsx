@@ -30,6 +30,7 @@ export default function PlanilhaPage() {
   // Data inicial: próxima segunda-feira (2025-06-23)
   const [selectedDate, setSelectedDate] = useState('2025-06-23');
   const [showCalendar, setShowCalendar] = useState(false);
+  const [swipeBorder, setSwipeBorder] = useState<'left' | 'right' | null>(null);
   const workout = findWorkoutByDate(selectedDate);
 
   // Swipe handler
@@ -46,9 +47,13 @@ export default function PlanilhaPage() {
     if (Math.abs(diff) > minSwipe) {
       if (diff < 0) {
         // Swipe para a esquerda: próximo dia
+        setSwipeBorder('right');
+        setTimeout(() => setSwipeBorder(null), 300);
         setSelectedDate(getNextDate(selectedDate));
       } else {
         // Swipe para a direita: dia anterior
+        setSwipeBorder('left');
+        setTimeout(() => setSwipeBorder(null), 300);
         setSelectedDate(getPrevDate(selectedDate));
       }
     }
@@ -83,10 +88,43 @@ export default function PlanilhaPage() {
         )}
       </div>
       <div
-        className="w-full max-w-md flex-1"
+        className={
+          `w-full max-w-md flex-1 relative ` +
+          (swipeBorder === 'left' ? ' swipe-border-left ' : '') +
+          (swipeBorder === 'right' ? ' swipe-border-right ' : '')
+        }
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
+        {/* Bordas animadas via CSS */}
+        <style jsx>{`
+          .swipe-border-left::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 8px;
+            background: #38bdf8;
+            border-radius: 8px;
+            box-shadow: 0 0 16px 4px #38bdf8aa;
+            z-index: 40;
+            animation: fadeBorder 0.3s linear;
+          }
+          .swipe-border-right::after {
+            content: '';
+            position: absolute;
+            right: 0; top: 0; bottom: 0;
+            width: 8px;
+            background: #38bdf8;
+            border-radius: 8px;
+            box-shadow: 0 0 16px 4px #38bdf8aa;
+            z-index: 40;
+            animation: fadeBorder 0.3s linear;
+          }
+          @keyframes fadeBorder {
+            from { opacity: 1; }
+            to { opacity: 0; }
+          }
+        `}</style>
         {workout ? (
           <WorkoutScroller blocks={workout.blocks} />
         ) : (
