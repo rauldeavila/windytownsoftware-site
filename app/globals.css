@@ -40,8 +40,8 @@
   --grain-opacity: 3;
 }
 
-body {
-  background-color: #c6c6c6 !important;
+html, body {
+  background-color: #171717;
   color: #333;
   font-family: 'Linik Sans', sans-serif;
   position: relative;
