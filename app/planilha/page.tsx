@@ -73,12 +73,12 @@ export default function PlanilhaPage() {
       if (diff < 0) {
         // Swipe para a esquerda: próximo dia COM treino
         setSwipeBorder('right');
-        setTimeout(() => setSwipeBorder(null), 300);
+        setTimeout(() => setSwipeBorder(null), 700);
         setSelectedDate(getNextDateWithWorkout(selectedDate));
       } else {
         // Swipe para a direita: dia anterior COM treino
         setSwipeBorder('left');
-        setTimeout(() => setSwipeBorder(null), 300);
+        setTimeout(() => setSwipeBorder(null), 700);
         setSelectedDate(getPrevDateWithWorkout(selectedDate));
       }
     }
@@ -133,7 +133,7 @@ export default function PlanilhaPage() {
             border-radius: 8px;
             box-shadow: 0 0 16px 4px #fff8;
             z-index: 40;
-            animation: fadeBorder 0.3s linear;
+            animation: fadeBorder 0.7s linear;
           }
           .swipe-border-right::after {
             content: '';
@@ -144,7 +144,7 @@ export default function PlanilhaPage() {
             border-radius: 8px;
             box-shadow: 0 0 16px 4px #fff8;
             z-index: 40;
-            animation: fadeBorder 0.3s linear;
+            animation: fadeBorder 0.7s linear;
           }
           @keyframes fadeBorder {
             from { opacity: 1; }
