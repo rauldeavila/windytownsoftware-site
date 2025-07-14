@@ -103,7 +103,7 @@ export default function PlanilhaPage() {
                 className="bg-neutral-700 text-white rounded px-2 py-1"
                 value={selectedDate}
                 min="2025-06-23"
-                max="2025-07-12"
+                max="2025-07-19"
                 onChange={e => {
                   setSelectedDate(e.target.value);
                   setShowCalendar(false);
