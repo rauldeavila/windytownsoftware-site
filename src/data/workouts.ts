@@ -284,4 +284,68 @@ export const workouts: WorkoutDay[] = [
   { date: "2025-08-02", week: "SEXTA SEMANA", day: "SÁBADO", blocks: [
     { label: "A", content: "JUST FOR FUN / Treino em equipe" },
   ] },
+  {
+    date: "2025-08-04",
+    week: "SÉTIMA SEMANA (DELOAD)",
+    day: "SEGUNDA",
+    blocks: [
+      { label: "A", content: "A+M+A" },
+      { label: "B", content: "Low hang power Snatch\n70%x2, (75%x1)2" },
+      { label: "C", content: "Power Snatch\n(77%x1)3" },
+      { label: "D", content: "Back squat\n(70%x3)3" },
+      { label: "E", content: "EMOM 15' (20''ON/40''OFF)\n1- HSPU\n2- box jump over\n3- hang power clean (55%)\n*Para máxima eficiência e qualidade de padrão;\n*Evitar queda no ritmo" },
+      { label: "F", content: "4RDS\n6-6 remada alta com 1 DB\n6-6 step ups (foco na perna da frente)\n6 bom dia sentado\nRest 30'' entre cada exercício" },
+      { label: "G", content: "Auxiliares Maromba" },
+    ],
+  },
+  {
+    date: "2025-08-05",
+    week: "SÉTIMA SEMANA (DELOAD)",
+    day: "TERÇA",
+    blocks: [
+      { label: "A", content: "A+M+A" },
+      { label: "B", content: "Toes to bar\n6x40% da Max\n*Para qualidade\n*Descansar o necessário entre as séries" },
+      { label: "C", content: "Rope climb leg less\n6x1\n*Para qualidade\n*Descansar o necessário entre as séries" },
+      { label: "D", content: "3RDS\n1':30 para\n200m de corrida\nMax GHD sit ups\nRest 1':30''" },
+      { label: "E", content: "EMOM 31' (zona 3)\n1' max cal remo\n1' max cal ski\n1' max cal air bike\n1' rest" },
+    ],
+  },
+  {
+    date: "2025-08-06",
+    week: "SÉTIMA SEMANA (DELOAD)",
+    day: "QUARTA",
+    blocks: [
+      { label: "A", content: "A+M+A" },
+      { label: "B", content: "Deadlift (set up)\n(70%x3)4" },
+      { label: "C", content: "Low hang power clean\n(70 a 80%x2)5" },
+      { label: "D", content: "6RDS\nA cada 4'\n10 thrusters*\n7 bar facing burpees\n40 DU\n*Carga de competição" },
+      { label: "E", content: "3RDS\n10 Romenian deadlifts\n20 flexores band\n20 glúteo band\nRest 30'' entre cada exercício" },
+    ],
+  },
+  {
+    date: "2025-08-07",
+    week: "SÉTIMA SEMANA (DELOAD)",
+    day: "QUINTA",
+    blocks: [
+      { label: "A", content: "A+M+A" },
+      { label: "B", content: "BMU\n6x40% da max\n*Para qualidade\n*Descansar o necessário entre as séries" },
+      { label: "C", content: "EMOM 15' (20''ON/40''OFF)\n1- chest to bar\n2- cal bike\n3- hang to overhead 2 DB\n*Para máxima eficiência e qualidade de padrão;\n*Evitar queda no ritmo" },
+      { label: "D", content: "3RDS\n30'' isometria puxada alta\n30'' hold paralelas\n30'' hold front rack\nRest 30'' entre cada exercício" },
+      { label: "E", content: "12 a 15' aeróbico de baixa intensidade" },
+    ],
+  },
+  {
+    date: "2025-08-08",
+    week: "SÉTIMA SEMANA (DELOAD)",
+    day: "SEXTA",
+    blocks: [
+      { label: "A", content: "A+M+A" },
+      { label: "B", content: "1 clean pull + 1 high hang squat clean + 1 hang squat clean + 1 squat clean (60 a 75%)3\n*Não fazer TNG para o squat clean" },
+      { label: "C", content: "Squat clean\n3-2-1-1-1-1\n(75% a 87%)" },
+      { label: "D", content: "Front squat\n(70%x3)4" },
+      { label: "E", content: "5RDS\nAMRAP 4'\n4 hang power cleans\n6m HSW\n8 box jump over\nrest 1' entre cada AMRAP" },
+      { label: "F", content: "Maromba Membros inferiores" },
+      { label: "G", content: "1000m de remo por tempo" },
+    ],
+  },
 ];
