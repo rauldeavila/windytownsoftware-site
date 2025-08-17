@@ -485,7 +485,7 @@ export const workouts: WorkoutDay[] = [
     week: "MICRO I - SEGUNDA SEMANA",
     day: "SÁBADO",
     blocks: [
-      { label: "A", content: ""JACKIE"\n1000m de remo\n50 thrusters (barra: 20kg/15kg)\n30 pull ups" },
+      { label: "A", content: "\"JACKIE\"\n1000m de remo\n50 thrusters (barra: 20kg/15kg)\n30 pull ups" },
       { label: "B", content: "AMRAP 15'\n200m de corrida\n3,6,9,12...burpees broad jump" },
     ],
   },
