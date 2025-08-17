@@ -418,4 +418,141 @@ export const workouts: WorkoutDay[] = [
       { label: "B", content: "AMRAP 15’\n200m de corrida\n3,6,9,12...burpees broad jump" },
     ],
   },
+  // SEGUNDA SEMANA - Meio de temporada (MICRO I)
+  {
+    date: "2025-08-18",
+    week: "MICRO I - SEGUNDA SEMANA",
+    day: "SEGUNDA",
+    blocks: [
+      { label: "A", content: "1 hang clean + 1 split jerk\n60%x2, (70%x1)2, (75%x1)2" },
+      { label: "B", content: "Clean and jerk\n(77% a 82%x1)3" },
+      { label: "C", content: "Back squat\n70%x5, (80%x3)2, 85%x1, 87%x1, 50%x8" },
+      { label: "D", content: "Strict HSPU (em deficit, maior nível de dificuldade)\n3-2-1-3-2-1" },
+      { label: "E", content: "3RDS\n3' para (zona 4 e 5)\n16/14 cal bike\n8 hang clusters (2DB)*\nMax HSPU\nrest : 3' caminhando/pedalando leve + 4' OFF total\n*Carga Moderada" },
+      { label: "F", content: "3RDS (sem tempo)\n20m overhead Walk (2DB/KB)\n30'' a 1' slam hold\n30'' cadeira isométrica parede (BW)\nrest 1' entre cada" },
+      { label: "G", content: "Preventivos Membros inferiores" },
+    ],
+  },
+  {
+    date: "2025-08-19",
+    week: "MICRO I - SEGUNDA SEMANA",
+    day: "TERÇA",
+    blocks: [
+      { label: "A", content: "Strict pull ups (Para máxima carga)\n3-2-1-3-2-1" },
+      { label: "B", content: "EM 10'\n1x max chest to bar\n4 a 5 séries de 40% da max" },
+      { label: "C", content: "AMRAP 12' (ZONA 3 e 4)\n350m de remo\n20-17-14 toes to bar*\n30m farms (2kb)\n*toes to bar unbroken" },
+      { label: "D", content: "3RDS\n1'- Max shuttle runs (14m)\n1'- max rope climb\n1'- Max DU\n1'- rest" },
+      { label: "E", content: "2RDS\n1000m de remo\n*Pace: 2:00/500m\n*rest 3 a 5'\n*Pode ser feito em turno oposto" },
+      { label: "F", content: "3RDS\n15 GHD sit ups\n20'' L-sit\n*descansar o necessário" },
+    ],
+  },
+  {
+    date: "2025-08-20",
+    week: "MICRO I - SEGUNDA SEMANA",
+    day: "QUARTA",
+    blocks: [
+      { label: "A", content: "Deadlift (set up)\n70%x5, (80%x3)2, 85%x1, 87%x1" },
+      { label: "B", content: "1 snatch high pull + 1 muscle snatchs + 1hang power snatch x5\n*progressão de carga livre\n*Não fazer TNG nos dois primeiros movimentos" },
+      { label: "C", content: "Heavy DB snatch (1DB)\n1x6\n2x4\n2x2\n*Descansar o necessário entre as séries" },
+      { label: "D", content: "4x800m de corrida\nrest 3 a 5'" },
+      { label: "E", content: "EMOM 10'\n1- 12/10 cal bike\n2- 10 power snatchs TNG (unbroken)\n3- 12/10 cal bike\n4- 8 power snatchs TNG (unbroken)\n5- 12/10 cal bike\n6- 6 power snatchs TNG unbroken\n7- 12/10 cal bike\n8 – 4 power snatchs TNG unbroken\n9- 12/10 cal bike\n10- 2 power snatchs TNG unbroken\n*progressão de carga livre" },
+    ],
+  },
+  {
+    date: "2025-08-21",
+    week: "MICRO I - SEGUNDA SEMANA",
+    day: "QUINTA",
+    blocks: [
+      { label: "A", content: "Front squats\n70%x3, (80%x2)2, 85%x1, 87%x1" },
+      { label: "B", content: "10RDS\n4BMU\n6 Burpees\n8 wall balls\nrest 1' entre cada RD" },
+      { label: "C", content: "4RDS\n300 de remo\n20m DB walking lunges (2DB)\nrest 2' entre cada RD" },
+      { label: "D", content: "3RDS\n15 DB Deadlifts (2DB)\n30'' assault bike apenas com as pernas\nrest 1'" },
+    ],
+  },
+  {
+    date: "2025-08-22",
+    week: "MICRO I - SEGUNDA SEMANA",
+    day: "SEXTA",
+    blocks: [
+      { label: "A", content: "Bench press\n70%x5, (80%x3)2, 85%x1, 87%x1" },
+      { label: "B", content: "3RDS\n5 sobe e desce anilha\n5 strict press sentado (2DB)\n10 hollow rocks\n*descansar o necessário entre as séries" },
+      { label: "C", content: "EM 10'\n1x Max Dist HSW\n3 a 5 séries 40% da max" },
+      { label: "D", content: "4RDS\nAMRAP 4'\n5 power cleans*\n5 HSPU\n10-15-20-25..DU\n*series de Du sempre unbroken\n* Na quebra, recomeçar a série que estava\n*M:60/50/40\n*F:45/35/30" },
+    ],
+  },
+  {
+    date: "2025-08-23",
+    week: "MICRO I - SEGUNDA SEMANA",
+    day: "SÁBADO",
+    blocks: [
+      { label: "A", content: ""JACKIE"\n1000m de remo\n50 thrusters (barra: 20kg/15kg)\n30 pull ups" },
+      { label: "B", content: "AMRAP 15'\n200m de corrida\n3,6,9,12...burpees broad jump" },
+    ],
+  },
+  // TERCEIRA SEMANA - Meio de temporada (MICRO I)
+  {
+    date: "2025-08-25",
+    week: "MICRO I - TERCEIRA SEMANA",
+    day: "SEGUNDA",
+    blocks: [
+      { label: "A", content: "3RDS\n3 a 5 false grip RING pull\n5 russian dips\n5 transições para a anilha\n5 kipping rings\n* rest 30'' entre cada RD" },
+      { label: "B", content: "3RDS (zona 3 e 4, para qualidade)\nAMRAP 4'\n2 shuttle runs 14m\n3 burpees\n40% Max chest to bar\nrest 1' entre cada AMRAP" },
+      { label: "C", content: "3RDS\n500m de remo\n100 DU\n800m de corrida\nrest 2' entre cada RD" },
+      { label: "D", content: "3RDS sem tempo\n6 a 8 remada curvada (2DB/KB) heavy\n15 a 20 GHD sit ups\n20 band bulls\n* rest 30'' entre cada RD" },
+    ],
+  },
+  {
+    date: "2025-08-26",
+    week: "MICRO I - TERCEIRA SEMANA",
+    day: "TERÇA",
+    blocks: [
+      { label: "A", content: "Power snatch\n3-2-2-2-1-1\n*partir de 70%\n*progressão de carga livre\n* 1 a 2 reps na reserva" },
+      { label: "B", content: "1 pause back squat (4'') + 2 back squats\n(70% a 80%)4" },
+      { label: "C", content: "RD1(progredir a carga de OHS a cada RD)\n4' para\n12 overhead squats\n9 wall balls\n6 bar facing burpees\nRD2\n4' para\n9 overhead squats\n9 wall balls\n6 bar facing burpees\nRD3\n4' para\n6 overhead squats\n9 wall balls\n6 bar facing burpees\nRD4\n4' para\n3 overhead squats\n9 wallballs\n6 bar facing burpees\nRD5\n4' para max RDS\n1 wall walk\nMax dist unb HSW" },
+    ],
+  },
+  {
+    date: "2025-08-27",
+    week: "MICRO I - TERCEIRA SEMANA",
+    day: "QUARTA",
+    blocks: [
+      { label: "A", content: "3RDS (SEM TEMPO)\n1 rope leg less\n2 rope climb\n15 a 20'' L-sit\n15 a 20'' chin up hold\n*Rest 30'' entre cada exercício" },
+      { label: "B", content: "8RDS\n125m de remo\n10 t2b\nrest 1'" },
+      { label: "C", content: "6RDS (zona 3)\n1' de corrida\n1' de ski\n1' bike (air bike ou bike erg)" },
+      { label: "D", content: "3RDS\n10 gorila rows (2kb)\n10 lombares caixa/ghd\n15 a 20 strict pull ups com band\nrest 30'' entre cada exercício" },
+    ],
+  },
+  {
+    date: "2025-08-28",
+    week: "MICRO I - TERCEIRA SEMANA",
+    day: "QUINTA",
+    blocks: [
+      { label: "A", content: "Squat clean\n3-2-2-2-1-1-1\n*partir de 70%\n* 1 a 2 reps na reserva" },
+      { label: "B", content: "EMOM 10'\n2 front squats\n* a cada 2' aumentar a carga\n* partir de 65%" },
+      { label: "C", content: "A cada 2' por 20'\n5 strict HSPU\n7 power cleans*\n6 burpees\n*80/70/60kg\n*60/50/40" },
+      { label: "D", content: "3RDS\n20m heavy DB walking lunges\nrest 2'" },
+      { label: "E", content: "2RDS\n15'' all out\nrest 2' pedalando/caminhando\n17'' all out\nrest 2' pedalando/caminhando\n20'' all out\nrest 2' pedalando/caminhando" },
+    ],
+  },
+  {
+    date: "2025-08-29",
+    week: "MICRO I - TERCEIRA SEMANA",
+    day: "SEXTA",
+    blocks: [
+      { label: "A", content: "3RDS (SEM TEMPO)\n30'' hold paralelas\n5 russian dips\n5 transições para anilha\nrest 30'' entre cada exercício" },
+      { label: "B", content: "8RDS\n125m de remo\n40% max BMU\nrest 1'" },
+      { label: "C", content: "4RDS\nAMRAP 4'\n5 Fat bar deadlifts*\n7 toes to bar\n30 DU\nrest 1' entre cada AMRAP\n*carga de competição" },
+      { label: "D", content: "2X1500m de remo\n*pace: 2:12 a 2:16/500m" },
+    ],
+  },
+  {
+    date: "2025-08-30",
+    week: "MICRO I - TERCEIRA SEMANA",
+    day: "SÁBADO",
+    blocks: [
+      { label: "A", content: "Split jerk\n3-2-2-2-1-1-1\n*Progressão de carga livre\n* 1 a 2 reps na reserva" },
+      { label: "B", content: "Front rack dip com pausa de 4''\n(105% do melhor jerk x2)3" },
+      { label: "C", content: "Treino em times/ just for fun" },
+    ],
+  },
 ];
