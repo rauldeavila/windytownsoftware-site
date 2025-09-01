@@ -556,4 +556,146 @@ export const workouts: WorkoutDay[] = [
       { label: "C", content: "Treino em times/ just for fun" },
     ],
   },
+  // ACUMULAÇÃO (PRÉ COMP) - PRIMEIRA SEMANA
+  {
+    date: "2025-09-01",
+    week: "ACUMULAÇÃO (PRÉ COMP) - PRIMEIRA SEMANA",
+    day: "SEGUNDA",
+    blocks: [
+      { label: "A", content: "1 clean and split jerk + 1 clean\n65%x1, (70%x1)2, (75%x1)2\n*Não fazer TNG" },
+      { label: "B", content: "1 clean and split jerk\n(77%x1)2, (80%x1)\n*Não fazer TNG" },
+      { label: "C", content: "Front squat\n(70%x5)4" },
+      { label: "D", content: "Pliometria\nCaixa + contato rápido no solo + caixa na frente\n3x3" },
+      { label: "E", content: "EMOM 6' (elemento de competição)\n1- 50% max RMU/BMU\n2- 30% max RMU/BMU\n3- 20% max RMU/BMU" },
+      { label: "F", content: "6RDS (PSE 8 a 9 de 10)\n12 cal bike\n12 clean and jerk *\n12 toes to bar\nrest 2' entre cada RD\n*Não aumentar mais de 20% no tempo entre cada RD\n*Carga de competição" },
+      { label: "G", content: "AMRAP 12' (zona 2)\n250m de remo\n5 sand bag cleans\n30m sand bag carry" },
+    ],
+  },
+  {
+    date: "2025-09-02",
+    week: "ACUMULAÇÃO (PRÉ COMP) - PRIMEIRA SEMANA",
+    day: "TERÇA",
+    blocks: [
+      { label: "A", content: "Rope climb leg less from the ground\n5x1" },
+      { label: "B", content: "EMOM 9' (qualidade)\n1- 50'' Max c2b\n2- 30'' Max c2b\n3- 20'' Max c2b" },
+      { label: "C", content: "4RDS\n12 Deadlifts *\n9 BMU/Pull ups\n60 DU\nrest 1' entre cada RD\n*Carga de competição\n*Pace negative" },
+      { label: "D", content: "Por tempo\n21-15-9\ncal bike\nbar facing burpees" },
+      { label: "E", content: "Remo\n4x100m all out (damper 10)\nrest 1:30 entre cada RD" },
+      { label: "F", content: "2RDS\n350m pace forte\n250m pace leve" },
+    ],
+  },
+  {
+    date: "2025-09-03",
+    week: "ACUMULAÇÃO (PRÉ COMP) - PRIMEIRA SEMANA",
+    day: "QUARTA",
+    blocks: [
+      { label: "A", content: "1 snatch high pull + low hang power snatch + 1 power snatch\n60%x1, (70%x1), (75%x1)" },
+      { label: "B", content: "1 snatch high pull + 1 low hang power snatch\n(77%x1)3" },
+      { label: "C", content: "Back squat\n(60%x3)3" },
+      { label: "D", content: "5RDS por tempo\n200m de corrida\n9 power snatchs *\n5 RMU\n*carga de competição" },
+      { label: "E", content: "2RDS (PSE 8 a 10)\n10m front rack walking lunges *\n15'' all out assault bike\n30'' bike pace leve\n10m front rack walking lunges\n20 wall balls *\n1' bike pace leve\nrest 2'\n*carga de competição" },
+    ],
+  },
+  {
+    date: "2025-09-04",
+    week: "ACUMULAÇÃO (PRÉ COMP) - PRIMEIRA SEMANA",
+    day: "QUINTA",
+    blocks: [
+      { label: "A", content: "40' aeróbico de baixa intensidade (zona 2 e 3)" },
+      { label: "B", content: "Trabalho técnico" },
+    ],
+  },
+  {
+    date: "2025-09-05",
+    week: "ACUMULAÇÃO (PRÉ COMP) - PRIMEIRA SEMANA",
+    day: "SEXTA",
+    blocks: [
+      { label: "A", content: "Complex cleans x5\n1 clean pull + 2 power cleans + 2 hang power\n*Partir de 65%\n*Progressão de carga livre" },
+      { label: "B", content: "Bench press\n(70%x5)4" },
+      { label: "C", content: "EMOM 9' (qualidade)\n1- 50% Max HSPU\n2- 30% Max HSPU\n3- 20% Max HSPU" },
+      { label: "D", content: "4RDS (PSE 7 a 8 de 10)\nAMRAP 3'\n4 hang power cleans *\n6 BMU\n8 box jump over\nrest 1' entre cada AMRAP\n*Carga de competição" },
+      { label: "E", content: "AMRAP 10' (zona 3 e 4, PSE 7 a 8)\n14-12-10 t2b\n10 cal remo\n10 burpees" },
+    ],
+  },
+  {
+    date: "2025-09-06",
+    week: "ACUMULAÇÃO (PRÉ COMP) - PRIMEIRA SEMANA",
+    day: "SÁBADO",
+    blocks: [
+      { label: "A", content: "TREINO COM TURMAS / TREINOS VARIADOS / TREINO FORA DE CASA" },
+    ],
+  },
+
+  // ACUMULAÇÃO (PRÉ COMP) - SEGUNDA SEMANA
+  {
+    date: "2025-09-08",
+    week: "ACUMULAÇÃO (PRÉ COMP) - SEGUNDA SEMANA",
+    day: "SEGUNDA",
+    blocks: [
+      { label: "A", content: "1 hang clean + 1 split jerk\n(70%x1)2, (75%x1)2, 77%x1" },
+      { label: "B", content: "Squat clean\n(77%x2)2, (80%x2)2, 85%x2\n*Não fazer TNG" },
+      { label: "C", content: "Back squat\n(80%x3)3" },
+      { label: "D", content: "3RDS\n5 russian dips\n5 transições para anilha\n5 Ring strict dips\n5 kipping rings\n*Descansar o necessário para qualidade" },
+      { label: "E", content: "3RDS Por tempo (Cap 8' a 12')\n10 clean and jerks *\n10 bar facing burpees\n*Carga de competição" },
+      { label: "F", content: "3RDS (ZONA 4, PSE 7 a 8)\n300m de remo\n20m burpee broad jump\n60m sand bag carry" },
+    ],
+  },
+  {
+    date: "2025-09-09",
+    week: "ACUMULAÇÃO (PRÉ COMP) - SEGUNDA SEMANA",
+    day: "TERÇA",
+    blocks: [
+      { label: "A", content: "Aquecimento prévio" },
+      { label: "B", content: "2RDS\n800m de corrida\nrest 2' pedalando\n600m de corrida\nrest 2' pedalando\n400m de corrida\nrest 2' pedalando" },
+      { label: "C", content: "EMOM 9'\n1- 50% Max t2b\n2- 30% Max t2b\n3- 20% Max t2b" },
+      { label: "D", content: "4RDS\nA cada 4'\n12 Deadlifts *\n12 chest to bar pull ups / pull ups\n12 cal bike\n*carga de competição" },
+      { label: "E", content: "AMRAP 12' (ZONA 3 a 4)\n2 rope leg less\n12 cal bike\n15 full swings *\n4 rope climb\n12 cal bike\n15 full swings\n*carga de competição" },
+    ],
+  },
+  {
+    date: "2025-09-10",
+    week: "ACUMULAÇÃO (PRÉ COMP) - SEGUNDA SEMANA",
+    day: "QUARTA",
+    blocks: [
+      { label: "A", content: "12 a 15' de prática de HSW com obstáculos" },
+      { label: "B", content: "EMOM 6' (sprint)\n1- 4m HSW\n2- 6m HSW\n3- 8m HSW" },
+      { label: "C", content: "6RDS\n3' para:\n15/12 cal remo\n10 front squats *\nMax burpees over the bar\nrest 1' entre cada RD" },
+      { label: "D", content: "Acumular\n3' sand bag hold\n3' hold paralelas\n30 strict sit ups com peso" },
+    ],
+  },
+  {
+    date: "2025-09-11",
+    week: "ACUMULAÇÃO (PRÉ COMP) - SEGUNDA SEMANA",
+    day: "QUINTA",
+    blocks: [
+      { label: "A", content: "1 snatch high pull + low hang power snatch\n60%x1, (70%x1), (75%x1)" },
+      { label: "B", content: "Power snatch\n(75%x2)4\n*Não fazer TNG" },
+      { label: "C", content: "Duplo heavy devil press (sem tempo)\n8-6-4-2-6-4-2\n*Progressão de carga livre" },
+      { label: "D", content: "2RDS (sem tempo)\n5 russian dips\n5 transições para anilha\n2RDS\n20'' hold paralelas\n3 a 5 strict pull ups" },
+      { label: "E", content: "6RDS\nA cada 3'\n5 Power snatchs *\n8 BMU\n45 DU\n*carga de competição\nNo tempo restante pedalando em zona 2" },
+    ],
+  },
+  {
+    date: "2025-09-12",
+    week: "ACUMULAÇÃO (PRÉ COMP) - SEGUNDA SEMANA",
+    day: "SEXTA",
+    blocks: [
+      { label: "A", content: "Bench press\n(70%x8)2, (75%x5)2" },
+      { label: "B", content: "EMOM 9'\n30% Max RMU/BMU" },
+      { label: "C", content: "5RDS (all out)\n17'' all out assault bike\n1 wall walk\nMax dist HSW unbroken\nrest 3'" },
+      { label: "D", content: "10 RDS\n5 strict HSPU\n7 toes to bar\n9 burpee box jump over" },
+      { label: "E", content: "15' aeróbico de baixa intensidade (zona 2 e 3)" },
+    ],
+  },
+  {
+    date: "2025-09-13",
+    week: "ACUMULAÇÃO (PRÉ COMP) - SEGUNDA SEMANA",
+    day: "SÁBADO",
+    blocks: [
+      { label: "A", content: "8x100m de remo\nPace: máximo esforço\nRest 3'" },
+      { label: "B", content: "Progressão de carga\n5x12m duplo DB overhead walking lunges\n*Descansar o necessário entre as séries" },
+      { label: "C", content: "4RDS\nA cada 3'\n12 cal remo\n3 squat cleans + 5 front squats (65%)\n*Reps unbroken\n*% de carga do clean\n*Pace constante" },
+      { label: "D", content: "Por tempo\n45 wall balls\n15 pull ups\n9 power cleans\n35 wall balls\n12 chest to bar\n6 power cleans\n25 wall balls\n9 bar muscle ups\n3 power cleans\n*carga de competição" },
+    ],
+  },
 ];
