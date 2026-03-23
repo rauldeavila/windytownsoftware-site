@@ -3,6 +3,10 @@ import { useState, useRef } from 'react';
 import WorkoutScroller from './WorkoutScroller';
 import { workouts } from '../../src/data/workouts';
 
+const workoutDates = workouts.map((w) => w.date).sort();
+const minWorkoutDate = workoutDates[0];
+const maxWorkoutDate = workoutDates[workoutDates.length - 1];
+
 function formatHeader(day, dateStr) {
   if (day) return `${day.week} - ${capitalize(day.day.toLowerCase())}`;
   // Se não houver treino, mostra a data formatada
@@ -102,8 +106,8 @@ export default function PlanilhaPage() {
                 type="date"
                 className="bg-neutral-700 text-white rounded px-2 py-1"
                 value={selectedDate}
-                min="2025-06-23"
-                max="2025-08-02"
+                min={minWorkoutDate}
+                max={maxWorkoutDate}
                 onChange={e => {
                   setSelectedDate(e.target.value);
                   setShowCalendar(false);
