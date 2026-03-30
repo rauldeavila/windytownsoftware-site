@@ -775,4 +775,68 @@ export const workouts: WorkoutDay[] = [
       { label: "E", content: "3RDS (sem tempo)\n8 a 12 supino inclinado com DB\n12 déficit push ups\n12 tríceps band" },
     ],
   },
+  // ACUMULAÇÃO MARÇO - SEGUNDA SEMANA
+  {
+    date: "2026-03-30",
+    week: "ACUMULAÇÃO MARÇO - SEGUNDA SEMANA",
+    day: "SEGUNDA",
+    blocks: [
+      { label: "A", content: "EMOM 6' (PSE 7 a 8)\n100m de corrida" },
+      { label: "B", content: "3RDS\n3 front squats (80%)\n3 box jump (para altura, sem TNG)\n3 CMJ (apenas barra)\nrest 2:30" },
+      { label: "C", content: "C1 complex\n(1 clean pull + 1 power clean + 1 hang power clean) + 3 power cleans singles\nC2 complex\n(1 clean pull + 1 power clean + 1 hang power clean) + 2 power cleans singles\nC3 - 2x\n(1 clean pull + 1 power clean + 1 hang power clean) + 1 power clean single\n*progressão de carga livre\n*partir de 70 a 80%" },
+      { label: "D", content: "A cada 3:00 por 9:00\n15/12 cal remo\n9 deadlifts*\n6 hang power cleans\n9 box jump over\n*M:70/60/50\n*F:55/45/35" },
+      { label: "E", content: "3RDS (sem tempo)\n12 Romanian deadlifts (2 DB)\n30'' front rack (2 KB)\n20 glúteo band\n15''/15'' Copenhagen plank\n*Descansar o necessário entre os exercícios e as séries para manter qualidade" },
+    ],
+  },
+  {
+    date: "2026-03-31",
+    week: "ACUMULAÇÃO MARÇO - SEGUNDA SEMANA",
+    day: "TERÇA",
+    blocks: [
+      { label: "A", content: "EMOM 8' (PSE 6 a 7)\n1- 30'' ski/bike apenas com as mãos\n2- 30'' burpee broad jump" },
+      { label: "B", content: "3RDS\n3 bench press (80%)\n3 déficit plio push ups\n3 plio push ups com band\nrest 2:30" },
+      { label: "C", content: "Para qualidade:\nEMOM 8'\n1- 10'' max RMU\n2- 15'' max RMU\n3- 20'' max RMU\n4- rest" },
+      { label: "D", content: "1RD (PSE 7)\n10m HSW\n10m burpee broad jump\n20/16 cal bike\nrest 1'\n10m HSW\n20m burpee broad jump\n10 BMU\n20/16 cal bike" },
+      { label: "E", content: "Por tempo\n7-5-3-1 wall walks\n75 DU" },
+      { label: "F", content: "2 a 3 RDS (sem tempo)\n10 elevação lateral\n10 pulldown com band" },
+    ],
+  },
+  {
+    date: "2026-04-01",
+    week: "ACUMULAÇÃO MARÇO - SEGUNDA SEMANA",
+    day: "QUARTA",
+    blocks: [
+      { label: "A", content: "16/14 cal remo\n5-4-3-2-1 back squats\n100m de corrida\n*Partir de 70%\n*Não precisa ser PR\n*rest 1 a 2' entre cada série" },
+      { label: "B", content: "3RDS\nAMRAP 4'\n2 rope leg less\n6 step ups over (2 DB)\n2 shuttle runs (12m)\nrest 1' entre cada AMRAP" },
+      { label: "C", content: "1x\n20'' para achar max RPM assault bike\nEMOM 9'\n1'\n- bike 70 a 75% max RPM\n1'\n- max dist sand bag/slam carry\n1'\n- off" },
+      { label: "D", content: "2x1000m de remo (PSE 6 a 7)\nrest 2'" },
+    ],
+  },
+  {
+    date: "2026-04-02",
+    week: "ACUMULAÇÃO MARÇO - SEGUNDA SEMANA",
+    day: "QUINTA",
+    blocks: [
+      { label: "A", content: "Split jerk\n3-2-2-1-1-1-1\n*partir de 70%\n*Não precisa ser PR" },
+      { label: "B", content: "C1 complex\n(1 snatch pull + 1 power snatch + 1 hang power snatch) + 3 power snatch singles\nC2 complex\n(1 snatch pull + 1 power snatch + 1 hang power snatch) + 2 power snatch singles\nC3 - 2x\n(1 snatch pull + 1 power snatch + 1 hang power snatch) + 1 power snatch single\n*progressão de carga livre\n*partir de 65 a 70%" },
+      { label: "C", content: "Sem tempo\n10 t2b\n5-4-3-2-1 strict HSPU (maior nível de dificuldade)" },
+      { label: "D", content: "AMRAP 15'\n4 hang snatch com DB\n6 c2b\n40 DU\n4 hang snatch com DB\n8 pull ups\n60 DU" },
+    ],
+  },
+  {
+    date: "2026-04-03",
+    week: "ACUMULAÇÃO MARÇO - SEGUNDA SEMANA",
+    day: "SEXTA",
+    blocks: [
+      { label: "A", content: "Complementar de corrida (vide planilha) / treino com turma / just for fun" },
+    ],
+  },
+  {
+    date: "2026-04-04",
+    week: "ACUMULAÇÃO MARÇO - SEGUNDA SEMANA",
+    day: "SÁBADO",
+    blocks: [
+      { label: "A", content: "Treino com turma / just for fun" },
+    ],
+  },
 ];

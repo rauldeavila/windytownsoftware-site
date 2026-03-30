@@ -11,3 +11,9 @@ RULE FOR POPULATING WORKOUTS:
 - Pay attetion to the date I'm telling you to start populating - I'll tell you which day of month/year is the "Monday" / "Segunda" in portuguese.
 - Always remove the "COACH GUTO GIORDANI" during the import
 - If you see any typo or mistake like my coach always spell "Unbroaken" instead of "Unbroken" - fix it.
+
+GIT WORKFLOW AFTER EACH WORKOUT INCLUSION:
+- After adding a new workout week, always run `git add .`
+- Commit all changes with the default message pattern:
+  `planilha: incluir <NOME DA SEMANA> (<DATA_INICIO_YYYY-MM-DD>)`
+- Push immediately to `origin main` with `git push origin main`
