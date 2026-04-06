@@ -901,4 +901,69 @@ export const workouts: WorkoutDay[] = [
       { label: "G", content: "Acessórios\n2 a 3 RDS\n8 a 12 DB bench press inclinado\n30'' hold paralelas\n8 a 12 tríceps francês" },
     ],
   },
+  // ABRIL - QUARTA SEMANA
+  {
+    date: "2026-04-13",
+    week: "ABRIL - QUARTA SEMANA",
+    day: "SEGUNDA",
+    blocks: [
+      { label: "A", content: "1 snatch high pull + 1 snatch\n60%x2, (70%x2)2, 75%x1" },
+      { label: "B", content: "Snatch\n77%x1, 80%x1, ?x1, ?x1, ?x1\n*progressão de carga livre\n*Não precisa ser PR" },
+      { label: "C", content: "Back squat\n(70%x3)2, (80%x2)2, (85%x1)2" },
+      { label: "D", content: "EMOM 10'\n1- 3 a 5 power cleans singles (80%)\n2- 35 a 45 DU (foco unbroken)\n3- 5 a 10m HSW\n4- 35 a 45 DU (foco unbroken)" },
+      { label: "E", content: "AMRAP 10'\n2 wall walk\n6 DB snatches*\n8 box jump over\n10 cal remo\n*Carga de competição" },
+    ],
+  },
+  {
+    date: "2026-04-14",
+    week: "ABRIL - QUARTA SEMANA",
+    day: "TERÇA",
+    blocks: [
+      { label: "A", content: "(PSE 7 a 8)\n800m de corrida\nrest 2'\n400m de corrida\nrest 2'\n600m de corrida\nrest 2'\n200m de corrida" },
+      { label: "B", content: "3RDS (sem tempo)\n5 russian push ups\n5 hollow ups\n5 strict leg raises\n5 arch ups" },
+      { label: "C", content: "Sem tempo (PSE 7)\n10-8-6-4-2 BMU\n10 cal bike/remo" },
+      { label: "D", content: "Por tempo\n21-15-9-6-3\ntoes to bar\n15 cal remo\n5 sand bag/slam sobre o ombro" },
+      { label: "E", content: "Acessórios\n2 a 3 RDS (sem tempo)\n15 strict pull ups (com band)\n30'' sand bag/slam hold" },
+    ],
+  },
+  {
+    date: "2026-04-15",
+    week: "ABRIL - QUARTA SEMANA",
+    day: "QUARTA",
+    blocks: [
+      { label: "A", content: "1 clean pull + 1 clean\n60%x2, (70%x2)2, 75%x1" },
+      { label: "B", content: "Clean\n77%x1, 80%x1, ?x1, ?x1, ?x1\n*progressão de carga livre\n*Não precisa ser PR" },
+      { label: "C", content: "Front squat\n60%x3, (70%x3)2, (80%x2)2" },
+      { label: "D", content: "3RDS\nAMRAP 4'\n3 hang power cleans (45kg)\n5 burpees over the bar\n7 deadlifts (45kg)\n9 cal bike\nrest 1' entre cada AMRAP" },
+      { label: "E", content: "Acessórios\n2 a 3 RDS\n15''-15'' Copenhagen plank\n8-8 RDL uni\n20 flexor band" },
+    ],
+  },
+  {
+    date: "2026-04-16",
+    week: "ABRIL - QUARTA SEMANA",
+    day: "QUINTA",
+    blocks: [
+      { label: "A", content: "OFF" },
+    ],
+  },
+  {
+    date: "2026-04-17",
+    week: "ABRIL - QUARTA SEMANA",
+    day: "SEXTA",
+    blocks: [
+      { label: "A", content: "EMOM 39'\n1- 10/8 cal remo\n2- 10/8 cal ski\n3- 10/8 cal assault\n4- rest" },
+      { label: "B", content: "Mobilidade forte" },
+    ],
+  },
+  {
+    date: "2026-04-18",
+    week: "ABRIL - QUARTA SEMANA",
+    day: "SÁBADO",
+    blocks: [
+      { label: "A", content: "Bench press\n(70%x3)4" },
+      { label: "B", content: "2RDS\n3 false grip ring pull\n5 hollow ups\n2 russian push ups\n5 kipping rings*\n1 ring dip" },
+      { label: "C", content: "AMRAP 6' (PSE 7)\n1-2-3 RMU*\n3 shuttle runs (12m)\n*Imediatamente após o final, 1x max RMU\nunbroken. (Evitar a falha total)" },
+      { label: "D", content: "AMRAP 5'\n2 BMU\n3 push ups\n9 squats\nrest 1'\n\nAMRAP 4'\n3 c2b\n4 push ups\n11 squats\nrest 1'\n\nAMRAP 3'\n4 pull ups\n5 push ups\n15 squats" },
+    ],
+  },
 ];
