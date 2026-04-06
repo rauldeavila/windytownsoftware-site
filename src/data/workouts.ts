@@ -839,4 +839,66 @@ export const workouts: WorkoutDay[] = [
       { label: "A", content: "Treino com turma / just for fun" },
     ],
   },
+  // ABRIL - TERCEIRA SEMANA
+  {
+    date: "2026-04-06",
+    week: "ABRIL - TERCEIRA SEMANA",
+    day: "SEGUNDA",
+    blocks: [
+      { label: "A", content: "1 clean + 1 low hang squat clean + 1 split jerk\n50%x1, 60%x1, (70%x2)2" },
+      { label: "B", content: "Clean and jerk\n75%x1, (80%x1)2, 85%x1" },
+      { label: "C", content: "Front squat\n(70%x3)2, (80%x2)2, (85%x1)2" },
+      { label: "D", content: "2RDS (sem tempo)\n5 a 8 strict HSPU\n12 cal bike\n8 a 12 HSPU\n10 cal bike\n12 a 16 push ups\nrest 2'" },
+      { label: "E", content: "AMRAP 6'\n1,2,3,4,5...\nPower cleans\nBurpee over the bar\n*M:60/50/40\n*F:45/35/30" },
+      { label: "F", content: "Acessórios\n2 a 3 RDS (sem tempo)\n15''-15'' Copenhagen plank\n8-8 cossack squats\n8 a 12 elevação pélvica" },
+    ],
+  },
+  {
+    date: "2026-04-07",
+    week: "ABRIL - TERCEIRA SEMANA",
+    day: "TERÇA",
+    blocks: [
+      { label: "A", content: "EMOM 9' (PSE 7 a 8)\n1- 12/10 cal erg\n2- 2 a 4 rope climb (4m)\n3- 30m farms" },
+      { label: "B", content: "3RDS (sem tempo)\n5 a 8 strict pull ups\n20'' L-sit\n15 GHD sit ups" },
+      { label: "C", content: "1RD\n8 BMU\n16 cal remo\n10 c2b\n14 cal remo\n12 pull ups\n12 cal remo\nrest 2'\n\n18-16-14-12 toes to bar\n30 DU\n30m slam/sand bag carry" },
+      { label: "D", content: "Acessórios\n2 a 3 RDS\n8 a 12 DB rows\n15''-15'' prancha lateral\n8 a 12 bíceps martelo" },
+    ],
+  },
+  {
+    date: "2026-04-08",
+    week: "ABRIL - TERCEIRA SEMANA",
+    day: "QUARTA",
+    blocks: [
+      { label: "A", content: "EMOM 6' (PSE 7 a 8)\n100m de corrida" },
+      { label: "B", content: "Deadlift set up\n60%x3, (70%x3)2, (80%x2)2, (85%x1)2" },
+      { label: "C", content: "1RD (PSE 7 a 8)\n12m HSW\n12 burpee step up over\n24 wall balls (20/16lbs)\nrest 1'\n12m HSW\n12 burpee step up over\n12 deadlifts*\n24 wall balls\n*M:80/70\n*F:60/50" },
+      { label: "D", content: "3RDS\nAMRAP 3'\n2 devil cleans (2 DB heavy)\n6 step ups over (2 DB heavy)\n2,4,6... shuttle runs (12m)\nrest 1'" },
+      { label: "E", content: "Acessórios\n2 a 3 RDS\n12 a 16 reverse lunges pé anilha\n20 glúteo band" },
+    ],
+  },
+  {
+    date: "2026-04-09",
+    week: "ABRIL - TERCEIRA SEMANA",
+    day: "QUINTA",
+    blocks: [
+      { label: "A", content: "1 snatch high pull + 1 low hang power snatch +\n1 power snatch\n50%x1, 60%x1, (70%x1)2\n*Não fazer TNG" },
+      { label: "B", content: "Power snatch\n75%x1, (80%x1)2, 85%x1" },
+      { label: "C", content: "2RDS (PSE 7 a 8)\n16 cal remo\n40 DU\nrest 1'\n14 cal remo\n10 power snatches*\n10 box jump\n40 DU\nrest 1'\n*M:50/40/30\n*F:35/30/25" },
+      { label: "D", content: "3RDS\n6-6 remada alta unilateral 1 DB\n10 lombares GHD/caixa" },
+    ],
+  },
+  {
+    date: "2026-04-10",
+    week: "ABRIL - TERCEIRA SEMANA",
+    day: "SEXTA",
+    blocks: [
+      { label: "A", content: "Opcional: OFF total ou apenas trabalho técnico neste dia\n\nEMOM 6'\n1- 30'' ski/bike apenas com as mãos\n2- 6 burpee pull up" },
+      { label: "B", content: "3RDS (sem tempo)\n3 false grip ring pull\n5 hollow ups\n3 russian push ups\n5 kipping rings*" },
+      { label: "C", content: "Apenas transição\n3x3\n*Se necessário, argola baixa e band no quadril" },
+      { label: "D", content: "Kipping ring + quadril alto\n4x1" },
+      { label: "E", content: "8' para séries de qualidade de RMU" },
+      { label: "F", content: "AMRAP 15'\n2 BMU\n4 burpees\n8 cal bike\n4 c2b\n4 burpees\n8 cal bike\n6 pull ups\n4 burpees\n8 cal bike" },
+      { label: "G", content: "Acessórios\n2 a 3 RDS\n8 a 12 DB bench press inclinado\n30'' hold paralelas\n8 a 12 tríceps francês" },
+    ],
+  },
 ];
