@@ -966,4 +966,71 @@ export const workouts: WorkoutDay[] = [
       { label: "D", content: "AMRAP 5'\n2 BMU\n3 push ups\n9 squats\nrest 1'\n\nAMRAP 4'\n3 c2b\n4 push ups\n11 squats\nrest 1'\n\nAMRAP 3'\n4 pull ups\n5 push ups\n15 squats" },
     ],
   },
+  // QUINTA SEMANA
+  {
+    date: "2026-04-20",
+    week: "QUINTA SEMANA",
+    day: "SEGUNDA",
+    blocks: [
+      { label: "A", content: "1 snatch deadlift + 1 hang snatch + 1 snatch\n(55 a 65%)3\n*Não fazer TNG" },
+      { label: "B", content: "Back squat\n(70%x3)2, 75%x3, 80%x2, 85%x2, 87%x1" },
+      { label: "C", content: "A cada 2:00 por 10:00\n3 snatches TNG\n*progressão de carga livre" },
+      { label: "D", content: "Sem tempo\n5-4-3-2-1 strict HSPU\n15'' + L-sit\n*progredir nível de dificuldade do strict HSPU" },
+      { label: "E", content: "AMRAP 15'\n15/12 cal remo\n10 HSPU\n10m front rack walking lunges\n50 DU" },
+      { label: "F", content: "Acessórios\n2 a 3 RDS\n8 a 12 cyclist squats\n10''-10'' Copenhagen plank\n8 a 12 elevação pélvica" },
+    ],
+  },
+  {
+    date: "2026-04-21",
+    week: "QUINTA SEMANA",
+    day: "TERÇA",
+    blocks: [
+      { label: "A", content: "3 RDS (sem tempo)\n5 strict ring dips (com carga)\n5 transições para a anilha\n5 false grip ring pull\n5 kipping rings" },
+      { label: "B", content: "A cada 2' por 10'\n3 kipping rings\n2 transições (sem finalizar)\n1 RMU" },
+      { label: "C", content: "2RDS (PSE 8)\n16/14 cal bike\n3 slam sobre o ombro\n14/12 c2b\nrest 1'\n14/12 cal bike\n60m slam carry\n16/14 t2b\nrest 1'" },
+      { label: "D", content: "Finisher\n1' max burpee pull up\n1' max hold paralelas\n1' max burpees\n1' hold paralelas" },
+      { label: "E", content: "Acessórios\n3 a 5 RDS\n20 side to side (2 KB)\n10 hollow ups\n15''-15'' prancha lateral" },
+    ],
+  },
+  {
+    date: "2026-04-22",
+    week: "QUINTA SEMANA",
+    day: "QUARTA",
+    blocks: [
+      { label: "A", content: "EMOM 8' (PSE 7)\n1- 100m de corrida\n2- 6 box jump (para altura)" },
+      { label: "B", content: "Deadlift (set up)\n(70%x3)2, 75%x3, 80%x2, 85%x2, 87%x1" },
+      { label: "C", content: "A cada 2:00 por 8:00\n3 squat cleans TNG" },
+      { label: "D", content: "3RDS\n10 power cleans*\n10m HSW\n30 DU\n10 box jump over\n10 wall balls\n30 DU\nrest 2'\n*M:70/60/50\n*F:55/45/35" },
+      { label: "E", content: "Acessórios\n3RDS\n8-8 RDL uni\n20 glúteo band\n12 a 16 reverse lunges pé na anilha" },
+    ],
+  },
+  {
+    date: "2026-04-23",
+    week: "QUINTA SEMANA",
+    day: "QUINTA",
+    blocks: [
+      { label: "A", content: "Behind the neck split jerk (técnico)\n(40% a 50%x3)3" },
+      { label: "B", content: "1 dip com pausa 3'' + 1 split jerk\n(60 a 77%)4\n*retomar para a posição inicial após o dip" },
+      { label: "C", content: "A cada 2:00 por 8:00\n3 push jerks\n*progressão de carga livre\n*Movimento dinâmico" },
+      { label: "D", content: "Por tempo\n20-18-16-14\ncal remo\nburpee sobre o remo\nDB snatch" },
+      { label: "E", content: "Acessórios\n3 RDS\n8 a 12 close grip DB bench press inclinado\n8 a 12 elevações laterais" },
+    ],
+  },
+  {
+    date: "2026-04-24",
+    week: "QUINTA SEMANA",
+    day: "SEXTA",
+    blocks: [
+      { label: "A", content: "4RDS\n4:00 de corrida zona 4\n3:00 recuperando zona 3\n*Não baixar além da zona 3" },
+      { label: "B", content: "Mobilidade" },
+    ],
+  },
+  {
+    date: "2026-04-25",
+    week: "QUINTA SEMANA",
+    day: "SÁBADO",
+    blocks: [
+      { label: "A", content: "TREINO COM TURMAS/JUST FOR FUN" },
+    ],
+  },
 ];
